@@ -1,0 +1,596 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>M3-ABP_2 (IND)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}pre{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;padding:1em;margin:.5em 0;overflow:auto;line-height:1.5;tab-size:4;hyphens:none;color:#c5c8c6;background-color:#27292c !important;border:#43484c;border-radius:3px}pre[class*="language-"]{padding:1em}code[class*="language-"] .token.comment,pre[class*="language-"] .token.comment,code[class*="language-"] .token.prolog,pre[class*="language-"] .token.prolog,code[class*="language-"] .token.doctype,pre[class*="language-"] .token.doctype,code[class*="language-"] .token.cdata,pre[class*="language-"] .token.cdata{color:#7C7C7C}code[class*="language-"] .token.punctuation,pre[class*="language-"] .token.punctuation{color:#96CBFE}code[class*="language-"] .namespace,pre[class*="language-"] .namespace{opacity:.7}code[class*="language-"] .token.constant,pre[class*="language-"] .token.constant{color:#99CC99}code[class*="language-"] .token.boolean,pre[class*="language-"] .token.boolean,code[class*="language-"] .token.number,pre[class*="language-"] .token.number,code[class*="language-"] .token.function-name,pre[class*="language-"] .token.function-name{color:#FF73FD}code[class*="language-"] .token.tag,pre[class*="language-"] .token.tag{color:#96CBFE}code[class*="language-"] .token.selector,pre[class*="language-"] .token.selector{color:#96CBFE}code[class*="language-"] .token.attr-name,pre[class*="language-"] .token.attr-name{color:#C6C5FE}code[class*="language-"] .token.string,pre[class*="language-"] .token.string{color:#A8FF60}code[class*="language-"] .token.char,pre[class*="language-"] .token.char{color:#FF8000}code[class*="language-"] .token.entity,pre[class*="language-"] .token.entity{color:#FFD2A7}code[class*="language-"] .token.url,pre[class*="language-"] .token.url{color:#7C7C7C}code[class*="language-"] .token.operator,pre[class*="language-"] .token.operator{color:#EDEDED}code[class*="language-"] .token.atrule,pre[class*="language-"] .token.atrule,code[class*="language-"] .token.attr-value,pre[class*="language-"] .token.attr-value,code[class*="language-"] .token.keyword,pre[class*="language-"] .token.keyword{color:#CFCB90}code[class*="language-"] .token.function,pre[class*="language-"] .token.function{color:#FFD2A7}code[class*="language-"] .token.class-name,pre[class*="language-"] .token.class-name{color:#FFD2A7}code[class*="language-"] .token.variable,pre[class*="language-"] .token.variable{color:#C6C5FE}code[class*="language-"] .token.regex,pre[class*="language-"] .token.regex,code[class*="language-"] .token.important,pre[class*="language-"] .token.important{color:#E9C062}code[class*="language-"] .token.important,pre[class*="language-"] .token.important,code[class*="language-"] .token.bold,pre[class*="language-"] .token.bold{font-weight:bold}code[class*="language-"] .token.italic,pre[class*="language-"] .token.italic{font-style:italic}code[class*="language-"] .token.entity,pre[class*="language-"] .token.entity{cursor:help}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:rgba(153,122,102,0.08);background:linear-gradient(to right, rgba(153,122,102,0.1) 70%, rgba(153,122,102,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:rgba(153,122,102,0.4);color:#f5f2f0;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px white}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}.emoji {
+  height: 0.8em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#c5c8c6;background-color:#1d1f21;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#fff}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#9ba09d}html body strong{color:#fff}html body del{color:#9ba09d}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#ddd;text-decoration:none}html body a:hover{color:#cecece;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#9ba09d;background-color:#303337;border-left:4px solid #43484c}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#43484c;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#fff}html body table td,html body table th{border:1px solid #43484c;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#fff;background-color:#303337;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#43484c;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#fff;border:1px solid #43484c;border-bottom:2px solid #35393c;padding:2px 4px;background-color:#303337;border-radius:3px}@media print{html body{background-color:#1d1f21}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#fff;page-break-after:avoid}html body blockquote{color:#9ba09d}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}html body a{text-decoration:underline}
+    /* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+    </style>
+    
+  </head>
+  <body for="html-export">
+    <div class="mume markdown-preview">
+
+      <ul>
+        <li><a href="./../index.html">Inicio</a></li>
+        <hr>
+        <li><a href="./ejercicios.html">Volver a Ejercicios</a></li>
+      </ul>
+  <hr>
+    <html><head></head><body><div><h1 class="mume-header" id="-ae2_abp3-individual">AE2_ABP3 (INDIVIDUAL)</h1>
+
+<p>Crear BD</p>
+<pre class="language-text">CREATE DATABASE tienda;
+</pre>
+<p>Seleccionar BD</p>
+<pre class="language-text">USE tienda;
+</pre>
+<p>CREAR TABLA fabricante</p>
+<pre class="language-text">CREATE TABLE fabricante (
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+nombre VARCHAR(100) NOT NULL
+);
+</pre>
+<p>CREAR TABLA producto</p>
+<pre class="language-text">CREATE TABLE producto (
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+nombre VARCHAR(100) NOT NULL,
+precio DOUBLE NOT NULL,
+id_fabricante INT UNSIGNED NOT NULL,
+FOREIGN KEY (id_fabricante) REFERENCES fabricante(id)
+);
+</pre>
+<p>POBLAR DATA EN TABLA fabricante</p>
+<pre class="language-text">INSERT INTO fabricante VALUES(1, &apos;Asus&apos;);
+INSERT INTO fabricante VALUES(2, &apos;Lenovo&apos;);
+INSERT INTO fabricante VALUES(3, &apos;Hewlett-Packard&apos;);
+INSERT INTO fabricante VALUES(4, &apos;Samsung&apos;);
+INSERT INTO fabricante VALUES(5, &apos;Seagate&apos;);
+INSERT INTO fabricante VALUES(6, &apos;Crucial&apos;);
+INSERT INTO fabricante VALUES(7, &apos;Gigabyte&apos;);
+INSERT INTO fabricante VALUES(8, &apos;Huawei&apos;);
+INSERT INTO fabricante VALUES(9, &apos;Xiaomi&apos;);
+</pre>
+<p>POBLAR DATA EN TABLA producto</p>
+<pre class="language-text">INSERT INTO producto VALUES(1, &apos;Disco duro SATA3 1TB&apos;, 86.99, 5);
+INSERT INTO producto VALUES(2, &apos;Memoria RAM DDR4 8GB&apos;, 120, 6);
+INSERT INTO producto VALUES(3, &apos;Disco SSD 1 TB&apos;, 150.99, 4);
+INSERT INTO producto VALUES(4, &apos;GeForce GTX 1050Ti&apos;, 185, 7);
+INSERT INTO producto VALUES(5, &apos;GeForce GTX 1080 Xtreme&apos;, 755, 6);
+INSERT INTO producto VALUES(6, &apos;Monitor 24 LED Full HD&apos;, 202, 1);
+INSERT INTO producto VALUES(7, &apos;Monitor 27 LED Full HD&apos;, 245.99, 1);
+INSERT INTO producto VALUES(8, &apos;Port&#xE1;til Yoga 520&apos;, 559, 2);
+INSERT INTO producto VALUES(9, &apos;Port&#xE1;til Ideapd 320&apos;, 444, 2);
+INSERT INTO producto VALUES(10, &apos;Impresora HP Deskjet 3720&apos;, 59.99, 3);
+INSERT INTO producto VALUES(11, &apos;Impresora HP Laserjet Pro M26nw&apos;, 180, 3);
+</pre>
+<p>1.- Lista el nombre de todos los productos que hay en la tabla producto.</p>
+<pre class="language-text">SELECT nombre from producto;
+</pre>
+<p>2.- Lista los nombres y los precios de todos los productos de la tabla producto.</p>
+<pre class="language-text">SELECT nombre, precio from producto;
+</pre>
+<p>3.- Lista todas las columnas de la tabla producto.</p>
+<pre class="language-text">SELECT * FROM producto;
+</pre>
+<p>4.- Lista el nombre de los productos, el precio en euros y el precio en d&#xF3;lares estadounidenses (USD)</p>
+<pre class="language-text">SELECT nombre, precio as EUR, (precio * 1.09) AS &apos;USD&apos;
+FROM producto;
+</pre>
+<p>5.- Lista el nombre de los productos, el precio en euros y el precio en d&#xF3;lares estadounidenses (USD).<br>
+Utiliza los siguientes alias para las columnas: nombre de producto, euros, d&#xF3;lares.</p>
+<pre class="language-text">SELECT nombre as &apos;Nombre de Producto&apos;, precio as euros, (precio * 1.09) as d&#xF3;lares
+FROM producto;
+</pre>
+<p>6.- Lista los nombres y los precios de todos los productos de la tabla producto, convirtiendo los<br>
+nombres a may&#xFA;scula.</p>
+<pre class="language-text">SELECT UPPER(nombre), precio
+FROM producto;
+</pre>
+<p>7.- Lista los nombres y los precios de todos los productos de la tabla producto, convirtiendo los<br>
+nombres a min&#xFA;scula</p>
+<pre class="language-text">SELECT LOWER(nombre), precio
+FROM producto;
+</pre>
+<p>8.- Lista el nombre de todos los fabricantes en una columna, y en otra columna obtenga en<br>
+may&#xFA;sculas los dos primeros caracteres del nombre del fabricante.</p>
+<pre class="language-text">SELECT nombre, UPPER(LEFT (NOMBRE, 2)) AS INICIALES
+FROM fabricante;
+</pre>
+<p>9.- Lista los nombres y los precios de todos los productos de la tabla producto, redondeando el valor<br>
+del precio.</p>
+<pre class="language-text">SELECT nombre, round(precio)
+FROM producto;
+</pre>
+<p>10.- Lista los nombres y los precios de todos los productos de la tabla producto, truncando el valor del<br>
+precio para mostrarlo sin ninguna cifra decimal.</p>
+<pre class="language-text">SELECT nombre, truncate(precio,0)
+FROM producto;
+</pre>
+<p>11.- Lista el identificador de los fabricantes que tienen productos en la tabla producto.</p>
+<pre class="language-text">SELECT id_fabricante
+FROM producto;
+</pre>
+<p>12.- Lista el identificador de los fabricantes que tienen productos en la tabla producto, eliminando los<br>
+identificadores que aparecen repetidos.</p>
+<pre class="language-text">SELECT DISTINCT id_fabricante
+FROM producto;
+</pre>
+<p>13.- Lista los nombres de los fabricantes ordenados de forma ascendente.</p>
+<pre class="language-text">SELECT nombre
+FROM fabricante order by nombre asc;
+</pre>
+<p>14-. Lista los nombres de los fabricantes ordenados de forma descendente</p>
+<pre class="language-text">SELECT nombre
+FROM fabricante order by nombre desc;
+</pre>
+<p>15.- Lista los nombres de los productos ordenados en primer lugar por el nombre de forma ascendente<br>
+y en segundo lugar por el precio de forma descendente</p>
+<pre class="language-text">SELECT nombre, precio
+FROM producto order by nombre asc, precio desc;
+</pre>
+<p>16.- Devuelve una lista con las 5 primeras filas de la tabla fabricante.</p>
+<pre class="language-text">SELECT *
+FROM fabricante
+LIMIT 5;
+</pre>
+<p>17.- Devuelve una lista con 2 filas a partir de la cuarta fila de la tabla fabricante. La cuarta fila tambi&#xE9;n<br>
+se debe incluir en la respuesta.</p>
+<pre class="language-text">SELECT *
+FROM fabricante
+LIMIT 3, 2;
+</pre>
+<p>18.- Lista el nombre y el precio del producto m&#xE1;s barato (Utilice solamente las cl&#xE1;sulas ORDERY BY y LIMIT</p>
+<pre class="language-text">SELECT *
+FROM producto order by precio asc
+LIMIT 1;
+</pre>
+<p>19.- Lista el nombre y precio del producto m&#xE1;s caro (Utilice solamente las cl&#xE1;usulas ORDERY BY Y LIMIT</p>
+<pre class="language-text">SELECT *
+FROM producto order by precio desc
+LIMIT 1;
+</pre>
+<p>20.- Lista el nombre de todos los productos del fabricante cuyo identificador de fabricante es igual a 2</p>
+<pre class="language-text">SELECT *
+FROM producto
+WHERE id_fabricante = 2;
+</pre>
+<p>21.- Lista el nombre de los productos que tienen precio menor o igual a 120 Euros</p>
+<pre class="language-text">SELECT nombre
+FROM producto
+</pre>
+<p>WHERE precio &lt;= 120;</p>
+<p>22.- Lista el nombre de los productos que tienen un precio mayor o igual a 400 EUR</p>
+<pre class="language-text">SELECT nombre
+FROM producto
+</pre>
+<p>WHERE precio &gt;= 400;</p>
+<p>23.- Lista el nombre de los producto que no tienen un precio mayor o igual a 400 EUR</p>
+<pre class="language-text">SELECT nombre
+FROM producto
+WHERE NOT precio &gt;= 400;
+</pre>
+<p>24.- Lista todos los productos que tengan un precio entre 80EUR y 300EUR. Sin utilizar el operador BETWEEN</p>
+<pre class="language-text">SELECT *
+FROM producto
+WHERE precio &gt;= 80 AND precio &lt;= 300;
+</pre>
+<p>25.- Lista todos los productos que tentan un precio entre los 60EUR y 200EUR. Utilizan el operador BETWEEN</p>
+<pre class="language-text">SELECT *
+FROM producto
+WHERE precio between 60 AND 200;
+</pre>
+<p>26.- Lista todos los productos que tengan un precio mayor que 200 EUR y que el identificador de fabricante sea igual a 6</p>
+<pre class="language-text">SELECT *
+FROM producto
+WHERE precio &gt; 200
+AND id_fabricante = 6;
+</pre>
+<p>27.- Lista todos los productos donde el identificador de fabricante sea 1,3 o 5. Sin utilizar el operador IN.</p>
+<pre class="language-text">SELECT *
+FROM producto
+WHERE id_fabricante = 1
+OR id_fabricante = 3
+OR id_fabricante = 5;
+</pre>
+<p>28.- Lista todos los productos donde el identificador de fabricante sea 1,3 o 5. Utilizando el operador IN</p>
+<pre class="language-text">SELECT *
+FROM producto
+WHERE id_fabricante IN(1,3,5);
+</pre>
+<p>29.- Lista el nombre y el precio de los productos en c&#xE9;ntimos (Habr&#xE1; que multiplicar por 100 el valor del precio).  Cree un alias para la columna que contiene el precio que se llame c&#xE9;ntimos</p>
+<pre class="language-text">SELECT nombre, precio, (precio *100) AS &apos;C&#xE9;ntimos&apos;
+FROM producto;
+</pre>
+<p>30.- Lista los nombres de los fabricantes cuyo nombre empiece por la letra S.</p>
+<pre class="language-text">SELECT nombre
+FROM fabricante
+WHERE nombre LIKE &apos;S%&apos;;
+</pre>
+<p>31.- Lista los nombres de los fabricantes cuyo nombre termine con la vocal e.</p>
+<pre class="language-text">SELECT nombre
+FROM fabricante
+WHERE nombre LIKE &apos;%e&apos;;
+</pre>
+<p>32.- Lista los nombres de los fabricantes cuyo nombre contenga el car&#xE1;cter w.</p>
+<pre class="language-text">SELECT nombre
+FROM fabricante
+WHERE nombre LIKE &apos;%w%&apos;;
+</pre>
+<p>33.- Lista los nombres de los fabricantes cuyo nombre sea de 4 caracteres.</p>
+<pre class="language-text">SELECT nombre
+FROM fabricante
+WHERE length(nombre) = 4;
+</pre>
+<p>34.- Devuelve una lista con el nombre de todos los productos que contienen la cadena Port&#xE1;til en el nombre</p>
+<pre class="language-text">SELECT nombre
+FROM producto
+WHERE nombre like &quot;%Port&#xE1;til%&quot;;
+</pre>
+<p>35.- Devuelve una lista con el nombre de todos los productos que contienen la cadena Monitor en el nombre y tienen un precio inferior a 215 EUR</p>
+<pre class="language-text">SELECT nombre
+FROM producto
+WHERE nombre LIKE &apos;%Monitor%&apos; AND precio &lt; 215;
+</pre>
+<p>36.- Lista el nombre y el precio de todos los productos que tengan un precio mayor o igual a 180 EUR. Ordene el resultado en primer lugar por el precio (en orden descendente) y en segundo lugar por el nombre (en orden ascendente)</p>
+<pre class="language-text">SELECT nombre, precio
+FROM producto
+WHERE precio &gt;= 180 order by precio desc, nombre asc;
+</pre>
+<h2 class="mume-header" id="-consultas-multitabla-composicion-interna">CONSULTAS MULTITABLA (COMPOSICION INTERNA)</h2>
+
+<p>1.- Devuelve una lista con el nombre de producto, precio y nombre de fabricante de todos los productos de la base de datos</p>
+<pre class="language-text">SELECT producto.nombre, producto.precio, fabricante.nombre
+FROM producto LEFT JOIN fabricante
+ON fabricante.id = producto.id_fabricante;
+</pre>
+<p>2.- Devuelve una lista con el nombre del producto, precio y nombre de fabricante de todos los productos de la base de datos. Ordene el resultado por el nombre del fabricante, por orden alfab&#xE9;tico.</p>
+<pre class="language-text">SELECT producto.nombre, producto.precio, fabricante.nombre
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+ORDER BY fabricante.nombre;
+</pre>
+<p>3.- Devuelve una lista con el identificador del producto, nombre del producto, identificador del fabricante y nombre del fabricante, de todos los productos de la base de datos.</p>
+<pre class="language-text">SELECT producto.id, producto.nombre, producto.id_fabricante, fabricante.nombre
+FROM producto
+INNER JOIN fabricante;
+</pre>
+<p>4.- Devuelve el nombre del producto, su precio y el nombre de su fabricante, del producto m&#xE1;s barato.</p>
+<pre class="language-text">SELECT producto.nombre, producto.precio, fabricante.nombre
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+ORDER BY producto.precio ASC
+LIMIT 1;
+</pre>
+<p>5.- Devuelve el nombre del producto, su precio y el nombre de su fabricante, del producto m&#xE1;s caro.</p>
+<pre class="language-text">SELECT producto.nombre, producto.precio, fabricante.nombre
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+ORDER BY producto.precio DESC
+LIMIT 1;
+</pre>
+<p>6.- Devuelve una lista de todos los productos del fabricante Lenovo.</p>
+<pre class="language-text">SELECT producto.nombre, fabricante.nombre
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+HAVING fabricante.nombre = &apos;Lenovo&apos;;
+</pre>
+<p>7.- Devuelve una lista de todos los productos del fabricante Crucial que tengan un precio mayor que<br>
+200&#x20AC;.</p>
+<pre class="language-text">SELECT producto.nombre, fabricante.nombre
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+HAVING fabricante.nombre = &apos;Crucial&apos;;
+</pre>
+<p>8.- Devuelve un listado con todos los productos de los fabricantes Asus, Hewlett-Packardy Seagate.<br>
+Sin utilizar el operador IN.</p>
+<pre class="language-text">SELECT fabricante.nombre, producto.nombre
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+HAVING fabricante.nombre = &apos;Asus&apos;
+	OR fabricante.nombre = &apos;Hewlett-Packard&apos;
+    OR fabricante.nombre = &apos;Seagate&apos;
+;
+</pre>
+<p>9.- Devuelve un listado con todos los productos de los fabricantes Asus, Hewlett-Packardy Seagate.<br>
+Utilizando el operador IN.</p>
+<pre class="language-text">SELECT fabricante.nombre, producto.nombre
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+HAVING fabricante.nombre IN (&apos;Asus&apos;, &apos;Hewlett-Packard&apos;, &apos;Seagate&apos;)
+;
+</pre>
+<p>10-. Devuelve un listado con el nombre y el precio de todos los productos de los fabricantes cuyo<br>
+nombre termine por la vocal e.</p>
+<pre class="language-text">SELECT producto.nombre, producto.precio, fabricante.nombre
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+HAVING fabricante.nombre LIKE &apos;%e&apos;
+;
+</pre>
+<p>11-. Devuelve un listado con el nombre y el precio de todos los productos cuyo nombre de fabricante<br>
+contenga el car&#xE1;cter w en su nombre.</p>
+<pre class="language-text">SELECT producto.nombre, producto.precio, fabricante.nombre
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+HAVING fabricante.nombre LIKE &apos;%w%&apos;
+;
+</pre>
+<p>12-. Devuelve un listado con el nombre de producto, precio y nombre de fabricante, de todos los<br>
+productos que tengan un precio mayor o igual a 180&#x20AC;. Ordene el resultado en primer lugar por el<br>
+precio (en orden descendente) y en segundo lugar por el nombre (en orden ascendente)</p>
+<pre class="language-text">SELECT producto.nombre, producto.precio, fabricante.nombre
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+HAVING producto.precio &gt;= 180
+ORDER BY producto.precio DESC, producto.nombre ASC
+;
+</pre>
+<p>13-.Devuelve un listado con el identificador y el nombre de fabricante, solamente de aquellos<br>
+fabricantes que tienen productos asociados en la base de dato</p>
+<pre class="language-text">SELECT producto.id_fabricante, fabricante.nombre
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+GROUP BY producto.id_fabricante
+;
+</pre>
+<h2 class="mume-header" id="-consultas-multitablas-composicion-externa">CONSULTAS MULTITABLAS (COMPOSICION EXTERNA)</h2>
+
+<p>Resuelva todas las consultas utilizando <strong>LEFT JOIN y RIGHT JOIN</strong></p>
+<p>1.- Devuelve un listado de todos los fabricantes que existen en la base de datos, junto con los productos que tiene cada uno de ellos.  El listado deber&#xE1; mostrar tambi&#xE9;n aquellos fabricantes que no tienen productos asociados</p>
+<pre class="language-text">SELECT fabricante.nombre as &apos;FABRICANTE&apos;, producto.nombre AS &apos;PRODUCTO&apos;
+FROM fabricante
+LEFT JOIN producto
+ON fabricante.id = producto.id_fabricante
+;
+</pre>
+<p>2.- Devuelve un listado donde s&#xF3;lo aparezcan aquellos fabricantes que no tienen ning&#xFA;n producto<br>
+asociado<br>
+<strong>OPCION A</strong></p>
+<pre class="language-text">SELECT COUNT(id_fabricante) AS Cuenta, fabricante.nombre
+FROM producto
+RIGHT JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+GROUP BY fabricante.nombre
+HAVING Cuenta = 0;
+</pre>
+<p><strong>OPCION B</strong></p>
+<pre class="language-text">SELECT f.nombre, p.nombre
+from fabricante f left join producto p
+on f.id = p.id_fabricante
+where p.nombre is null;
+</pre>
+<p>3.-  &#xBF;Pueden existir productos que no est&#xE9;n relacionados con un fabricante? Justifique su respuesta.<br>
+Primero vamos a intentar agregar un registro con un id_fabricante INV&#xC1;LIDO</p>
+<pre class="language-text">INSERT INTO producto
+(nombre, precio, id_fabricante)
+VALUES
+(&quot;POLLO CON PAPAS&quot;, 2000, 11);
+RESPUESTA: No es posible que haya un producto SIN fabricante ya que en la tabla producto en el campo id_fabricante est&#xE1; establecido como NOT NULL, sin embargo esta no es la &#xFA;nica restricci&#xF3;n ya que tambi&#xE9;n se encuentra definida como LLAVE FOR&#xC1;NEA con la tabla fabricante que impedir&#xE1; el ingreso de un registro sin un id_fabricante v&#xE1;lido (QUE EXISTE UN ID  EN LA TABLA FABRICANTE
+</pre>
+<h2 class="mume-header" id="-consultas-resumen">CONSULTAS RESUMEN</h2>
+
+<p>1.- Calcula el n&#xFA;mero total de productos que hay en la tabla productos.</p>
+<pre class="language-text">SELECT COUNT(*) AS &apos;TOTAL PRODUCTOS&apos;
+FROM producto
+;
+</pre>
+<p>2.- Calcula el n&#xFA;mero total de productos que hay en la tabla productos.</p>
+<pre class="language-text">SELECT COUNT(*)
+FROM producto
+;
+</pre>
+<p>3.- Calcula el n&#xFA;mero de valores distintos de identificador de fabricante aparecen en la tabla productos.</p>
+<pre class="language-text">SELECT COUNT(DISTINCT(id_fabricante)) AS &apos;Q DE FAB.&apos;
+FROM producto
+;
+</pre>
+<p>4.- Calcula la media del precio de todos los productos</p>
+<pre class="language-text">SELECT avg(precio) AS &apos;Media de Precios&apos;
+FROM producto
+;
+</pre>
+<p>5.- Calcula el precio m&#xE1;s barato de todos los productos</p>
+<pre class="language-text">SELECT MIN(precio) as &apos;MIN PRECIO&apos;
+FROM producto
+;
+</pre>
+<p>6.- Calcula el precio m&#xE1;s caro de todos los productos.</p>
+<pre class="language-text">SELECT MAX(precio) as &apos;MAX PRECIO&apos;
+FROM producto
+</pre>
+<p>7.- Lista el nombre y el precio del producto m&#xE1;s barato.</p>
+<pre class="language-text">SELECT nombre, precio
+FROM producto
+ORDER BY precio asc
+LIMIT 1
+;
+</pre>
+<p>8.- Lista el nombre y el precio del producto m&#xE1;s caro.</p>
+<pre class="language-text">SELECT nombre, precio
+FROM producto
+ORDER BY precio DESC
+LIMIT 1
+;
+</pre>
+<p>9.- Calcula la suma de los precios de todos los productos.</p>
+<pre class="language-text">SELECT sum(precio) AS &apos;Suma&apos;
+FROM producto
+;
+</pre>
+<p>10.- Calcula el n&#xFA;mero de productos que tiene el fabricante Asus.</p>
+<pre class="language-text">SELECT count(producto.id_fabricante) AS &apos;Q&apos;, fabricante.nombre AS &apos;FABRICANTE&apos;
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+WHERE fabricante.nombre = &apos;Asus&apos;
+;
+</pre>
+<p>11.- Calcula la media del precio de todos los productos del fabricante Asus</p>
+<pre class="language-text">SELECT AVG(producto.precio) AS &apos;MEDIA&apos;, fabricante.nombre AS &apos;FABRICANTE&apos;
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+WHERE fabricante.nombre = &apos;Asus&apos;
+;
+</pre>
+<p>12.- Calcula el precio m&#xE1;s barato de todos los productos del fabricante Asus</p>
+<pre class="language-text">SELECT MIN(producto.precio) AS &apos;MIN&apos;, fabricante.nombre AS &apos;FABRICANTE&apos;
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+WHERE fabricante.nombre  = &apos;Asus&apos;
+;
+</pre>
+<p>13.- Calcula el precio m&#xE1;s caro de todos los productos del fabricante Asus</p>
+<pre class="language-text">SELECT MAX(producto.precio) AS &apos;MAX&apos;, fabricante.nombre AS &apos;FABRICANTE&apos;
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+WHERE fabricante.nombre = &apos;Asus&apos;
+;
+</pre>
+<p>14.- Calcula la suma de todos los productos del fabricante Asus.</p>
+<pre class="language-text">SELECT SUM(producto.precio) as &apos;SUM&apos;, fabricante.nombre
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+WHERE fabricante.nombre = &apos;Asus&apos;
+;
+</pre>
+<p>15.- Muestra el precio m&#xE1;ximo, precio m&#xED;nimo, precio medio y el n&#xFA;mero total de productos que tiene<br>
+el fabricante Crucial</p>
+<pre class="language-text">SELECT MAX(producto.precio) AS &apos;MAX&apos;, MIN(producto.precio) AS &apos;MIN&apos;, AVG(producto.precio) &apos;AVG&apos;, COUNT(producto.id_fabricante) AS &apos;Q&apos;, fabricante.nombre
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+WHERE fabricante.nombre = &apos;Crucial&apos;
+;
+</pre>
+<p>16.- Muestra el n&#xFA;mero total de productos que tiene cada uno de los fabricantes. El listado tambi&#xE9;n<br>
+debe incluir los fabricantes que no tienen ning&#xFA;n producto. El resultado mostrar&#xE1; dos columnas,<br>
+una con el nombre del fabricante y otra con el n&#xFA;mero de productos que tiene. Ordene el<br>
+resultado descendentemente por el n&#xFA;mero de productos</p>
+<pre class="language-text">SELECT fabricante.nombre, COUNT(producto.id_fabricante) AS &apos;Q&apos;
+FROM producto
+RIGHT JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+GROUP BY fabricante.nombre
+ORDER BY Q DESC
+;
+</pre>
+<p>17.- Muestra el precio m&#xE1;ximo, precio m&#xED;nimo y precio medio de los productos de cada uno de los<br>
+fabricantes. El resultado mostrar&#xE1; el nombre del fabricante junto con los datos que se solicitan.</p>
+<pre class="language-text">SELECT MAX(producto.precio) AS &apos;MAX&apos;, MIN(producto.precio) AS &apos;MIN&apos;, AVG(producto.precio) AS &apos;AVG&apos;, fabricante.nombre AS &apos;FABRICANTE&apos;
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+GROUP BY fabricante.nombre
+;
+</pre>
+<p>18.- Muestra el precio m&#xE1;ximo, precio m&#xED;nimo, precio medio y el n&#xFA;mero total de productos de los<br>
+fabricantes que tienen un precio medio superior a 200&#x20AC;. No es necesario mostrar el nombre del<br>
+fabricante, con el identificador del fabricante es suficiente</p>
+<pre class="language-text">SELECT MAX(producto.precio) AS &apos;MAX&apos;, MIN(producto.precio) AS &apos;MIN&apos;, AVG(producto.precio) &apos;AVG&apos;, COUNT(producto.id_fabricante) AS &apos;Q PROD&apos;, fabricante.id AS &apos;ID&apos;, fabricante.nombre AS &apos;FABRICANTE&apos;
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+GROUP BY fabricante.id ,fabricante.nombre
+HAVING AVG &gt; 200
+;
+</pre>
+<p>19.- Muestra el nombre de cada fabricante, junto con el precio m&#xE1;ximo, precio m&#xED;nimo, precio medio y<br>
+el n&#xFA;mero total de productos de los fabricantes que tienen un precio medio superior a 200&#x20AC;. Es<br>
+necesario mostrar el nombre del fabricante.</p>
+<pre class="language-text">SELECT fabricante.nombre AS &apos;FABRICANTE&apos;, MAX(producto.precio) AS &apos;MAX&apos;, MIN(producto.precio) AS &apos;MIN&apos;, AVG(producto.precio) AS &apos;AVG&apos;, COUNT(producto.id_fabricante) AS &apos;Q&apos;
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+GROUP BY fabricante.nombre
+HAVING AVG &gt; 200
+;
+</pre>
+<p>20.- Calcula el n&#xFA;mero de productos que tienen un precio mayor o igual a 180&#x20AC;</p>
+<pre class="language-text">SELECT count(*) AS &apos;Q&apos;
+FROM producto
+WHERE precio &gt;= 180
+;
+</pre>
+<p>21.- Calcula el n&#xFA;mero de productos que tiene cada fabricante con un precio mayor o igual a 180&#x20AC;</p>
+<pre class="language-text">SELECT COUNT(producto.id_fabricante) AS &apos;Q&apos;, fabricante.nombre
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+WHERE producto.precio &gt;= 180
+GROUP BY fabricante.nombre
+;
+</pre>
+<p>22.- Lista el precio medio los productos de cada fabricante, mostrando solamente el identificador del<br>
+fabricante.</p>
+<pre class="language-text">SELECT fabricante.id, avg(producto.precio) AS &apos;AVG&apos;
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+GROUP BY fabricante.id
+;
+</pre>
+<p>23.- Lista el precio medio los productos de cada fabricante, mostrando solamente el nombre del<br>
+fabricante</p>
+<pre class="language-text">SELECT fabricante.nombre AS &apos;FABRICANTE&apos;, avg(producto.precio) AS &apos;AVG&apos;
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+GROUP BY fabricante.nombre
+;
+</pre>
+<p>24.- Lista los nombres de los fabricantes cuyos productos tienen un precio medio mayor o igual a 150&#x20AC;</p>
+<pre class="language-text">SELECT fabricante.nombre AS &apos;FABRICANTE&apos;
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+GROUP BY fabricante.nombre
+HAVING AVG(producto.precio) &gt;=150
+;
+</pre>
+<p>25.- Devuelve un listado con los nombres de los fabricantes que tienen 2 o m&#xE1;s productos</p>
+<pre class="language-text">SELECT fabricante.nombre AS &apos;FABRICANTE&apos;
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+GROUP BY fabricante.nombre
+HAVING COUNT(producto.id_fabricante)&gt;2
+;
+</pre>
+<p>26.- Devuelve un listado con los nombres de los fabricantes y el n&#xFA;mero de productos que tiene cada<br>
+uno con un precio superior o igual a 220 &#x20AC;. No es necesario mostrar el nombre de los fabricantes<br>
+que no tienen productos que cumplan la condici&#xF3;n.</p>
+<pre class="language-text">SELECT fabricante.nombre AS &apos;FABRICANTE&apos;, COUNT(producto.id_fabricante) AS &apos;Q&apos;
+FROM producto
+INNER JOIN fabricante
+ON producto.id_fabricante = fabricante.id
+WHERE producto.precio &gt;= 220
+GROUP BY fabricante.nombre
+;
+</pre>
+</div></body></html>
+    </div>
+  </body>
+</html>
