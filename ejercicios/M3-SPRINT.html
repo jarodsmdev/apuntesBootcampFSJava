@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>M3-SPRINT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}pre{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;padding:1em;margin:.5em 0;overflow:auto;line-height:1.5;tab-size:4;hyphens:none;color:#c5c8c6;background-color:#27292c !important;border:#43484c;border-radius:3px}pre[class*="language-"]{padding:1em}code[class*="language-"] .token.comment,pre[class*="language-"] .token.comment,code[class*="language-"] .token.prolog,pre[class*="language-"] .token.prolog,code[class*="language-"] .token.doctype,pre[class*="language-"] .token.doctype,code[class*="language-"] .token.cdata,pre[class*="language-"] .token.cdata{color:#7C7C7C}code[class*="language-"] .token.punctuation,pre[class*="language-"] .token.punctuation{color:#96CBFE}code[class*="language-"] .namespace,pre[class*="language-"] .namespace{opacity:.7}code[class*="language-"] .token.constant,pre[class*="language-"] .token.constant{color:#99CC99}code[class*="language-"] .token.boolean,pre[class*="language-"] .token.boolean,code[class*="language-"] .token.number,pre[class*="language-"] .token.number,code[class*="language-"] .token.function-name,pre[class*="language-"] .token.function-name{color:#FF73FD}code[class*="language-"] .token.tag,pre[class*="language-"] .token.tag{color:#96CBFE}code[class*="language-"] .token.selector,pre[class*="language-"] .token.selector{color:#96CBFE}code[class*="language-"] .token.attr-name,pre[class*="language-"] .token.attr-name{color:#C6C5FE}code[class*="language-"] .token.string,pre[class*="language-"] .token.string{color:#A8FF60}code[class*="language-"] .token.char,pre[class*="language-"] .token.char{color:#FF8000}code[class*="language-"] .token.entity,pre[class*="language-"] .token.entity{color:#FFD2A7}code[class*="language-"] .token.url,pre[class*="language-"] .token.url{color:#7C7C7C}code[class*="language-"] .token.operator,pre[class*="language-"] .token.operator{color:#EDEDED}code[class*="language-"] .token.atrule,pre[class*="language-"] .token.atrule,code[class*="language-"] .token.attr-value,pre[class*="language-"] .token.attr-value,code[class*="language-"] .token.keyword,pre[class*="language-"] .token.keyword{color:#CFCB90}code[class*="language-"] .token.function,pre[class*="language-"] .token.function{color:#FFD2A7}code[class*="language-"] .token.class-name,pre[class*="language-"] .token.class-name{color:#FFD2A7}code[class*="language-"] .token.variable,pre[class*="language-"] .token.variable{color:#C6C5FE}code[class*="language-"] .token.regex,pre[class*="language-"] .token.regex,code[class*="language-"] .token.important,pre[class*="language-"] .token.important{color:#E9C062}code[class*="language-"] .token.important,pre[class*="language-"] .token.important,code[class*="language-"] .token.bold,pre[class*="language-"] .token.bold{font-weight:bold}code[class*="language-"] .token.italic,pre[class*="language-"] .token.italic{font-style:italic}code[class*="language-"] .token.entity,pre[class*="language-"] .token.entity{cursor:help}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:rgba(153,122,102,0.08);background:linear-gradient(to right, rgba(153,122,102,0.1) 70%, rgba(153,122,102,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:rgba(153,122,102,0.4);color:#f5f2f0;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px white}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}.emoji {
+  height: 0.8em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#c5c8c6;background-color:#1d1f21;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#fff}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#9ba09d}html body strong{color:#fff}html body del{color:#9ba09d}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#ddd;text-decoration:none}html body a:hover{color:#cecece;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#9ba09d;background-color:#303337;border-left:4px solid #43484c}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#43484c;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#fff}html body table td,html body table th{border:1px solid #43484c;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#fff;background-color:#303337;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#43484c;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#fff;border:1px solid #43484c;border-bottom:2px solid #35393c;padding:2px 4px;background-color:#303337;border-radius:3px}@media print{html body{background-color:#1d1f21}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#fff;page-break-after:avoid}html body blockquote{color:#9ba09d}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}html body a{text-decoration:underline}
+    /* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+    </style>
+    
+  </head>
+  <body for="html-export">
+    <div class="mume markdown-preview">
+        <ul>
+            <li><a href="./../index.html">Inicio</a></li>
+            <hr>
+            <li><a href="./ejercicios.html">Volver a Ejercicios</a></li>
+          </ul>
+      <hr>
+    <html><head></head><body><div><h1 class="mume-header" id="-sprint_prev_riesgos">SPRINT_PREV_RIESGOS</h1>
+
+<hr>
+<h2 class="mume-header" id="-crear-base-de-datos-sprint_prev_riesgos">CREAR BASE DE DATOS SPRINT_PREV_RIESGOS</h2>
+
+<pre class="language-text">DROP DATABASE IF EXISTS SPRINT_PREV_RIESGOS;
+CREATE DATABASE SPRINT_PREV_RIESGOS;
+</pre>
+<h2 class="mume-header" id="-usar-tabla-abpro_6_prev_riesgos">USAR TABLA ABPRO_6_PREV_RIESGOS</h2>
+
+<pre class="language-text">USE SPRINT_PREV_RIESGOS;
+</pre>
+<h2 class="mume-header" id="-crear-tabla-cliente">CREAR TABLA Cliente</h2>
+
+<pre class="language-text">CREATE TABLE Cliente(
+    rutCliente INT(9) NOT NULL PRIMARY KEY,
+    nombres VARCHAR(30) NOT NULL,
+    apellidos VARCHAR(30) NOT NULL,
+    telefono VARCHAR(20) NOT NULL,
+    afp VARCHAR(30) NULL,
+    sistemaSalud VARCHAR(2) NULL,
+    direccion VARCHAR(70) NULL,
+    comuna VARCHAR(50) NULL,
+    edad INT(3) NOT NULL
+);
+</pre>
+<h2 class="mume-header" id="-crear-tabla-accidente">CREAR TABLA Accidente</h2>
+
+<pre class="language-text">CREATE TABLE Accidente(
+    accidenteId INT(9) NOT NULL PRIMARY KEY,
+    dia DATE NULL,
+    hora TIME NULL,
+    lugar VARCHAR(50) NOT NULL,
+    origen VARCHAR(100) NULL,
+    consecuencias VARCHAR(100) NULL,
+    cliente_rutCliente INT(9) NOT NULL
+);
+</pre>
+<h2 class="mume-header" id="-crear-llave-for%C3%A1nea-entre-accidente-y-cliente">CREAR LLAVE FOR&#xC1;NEA ENTRE ACCIDENTE Y CLIENTE</h2>
+
+<pre class="language-text">ALTER TABLE Accidente
+ADD CONSTRAINT accidente_cliente_FK
+FOREIGN KEY (cliente_rutCliente) REFERENCES Cliente(rutCliente);
+</pre>
+<h2 class="mume-header" id="-crear-tabla-capacitacion">CREAR TABLA Capacitacion</h2>
+
+<pre class="language-text">CREATE TABLE Capacitacion(
+    idCapacitacion INT(9) NOT NULL PRIMARY KEY,
+    fecha DATE NULL,
+    hora TIME NULL,
+    lugar VARCHAR(50) NOT NULL,
+    duracion INT(3) NULL,
+    cantidadAsistentes INT(5) NOT NULL,
+    cliente_rutCliente INT(9) NOT NULL
+);
+</pre>
+<h2 class="mume-header" id="-crear-llave-for%C3%A1nea-entre-capacitacion-y-cliente">CREAR LLAVE FOR&#xC1;NEA ENTRE CAPACITACION Y CLIENTE</h2>
+
+<pre class="language-text">ALTER TABLE Capacitacion
+ADD CONSTRAINT capacitacion_cliente_FK
+FOREIGN KEY (cliente_rutCliente) REFERENCES Cliente(rutCliente);
+</pre>
+<h2 class="mume-header" id="-crear-tabla-asistentes">CREAR TABLA Asistentes</h2>
+
+<pre class="language-text">CREATE TABLE Asistentes(
+    idAsistente INT(9) NOT NULL PRIMARY KEY,
+    nombres VARCHAR(100) NOT NULL,
+    edad INT(3) NOT NULL,
+    capacitacion_idCapacitacion INT(9) NOT NULL
+);
+</pre>
+<h2 class="mume-header" id="-crear-llave-for%C3%A1nea-entre-asistentes-y-capacitacion">CREAR LLAVE FOR&#xC1;NEA ENTRE ASISTENTES Y CAPACITACION</h2>
+
+<pre class="language-text">ALTER TABLE Asistentes
+ADD CONSTRAINT asistentes_capacitacion_FK
+FOREIGN KEY (capacitacion_idCapacitacion) REFERENCES Capacitacion(idCapacitacion);
+</pre>
+<h2 class="mume-header" id="-modificar-tabla-cliente">MODIFICAR TABLA Cliente</h2>
+
+<pre class="language-text">ALTER TABLE Cliente
+RENAME COLUMN nombres TO cliNombres,
+CHANGE COLUMN apellidos cliApellidos VARCHAR(50) NOT NULL,
+RENAME COLUMN telefono TO cliTelefono,
+RENAME COLUMN afp TO cliAfp,
+RENAME COLUMN sistemaSalud TO cliSistemaSalud,
+CHANGE COLUMN direccion cliDireccion VARCHAR(100) NOT NULL,
+CHANGE COLUMN comuna cliComuna VARCHAR(50) NOT NULL,
+CHANGE COLUMN edad cliEdad INT(3) NOT NULL;
+</pre>
+<h2 class="mume-header" id="-modificar-tabla-capacitacion">MODIFICAR TABLA Capacitacion</h2>
+
+<pre class="language-text">ALTER TABLE Capacitacion
+RENAME COLUMN fecha TO capFecha,
+RENAME COLUMN hora TO capHora,
+CHANGE COLUMN lugar capLugar VARCHAR(100) NOT NULL,
+CHANGE COLUMN duracion capDuracion INT(4) NULL,
+DROP COLUMN cantidadAsistentes;
+;
+</pre>
+<h2 class="mume-header" id="-modificar-tabla-asistentes">MODIFICAR TABLA Asistentes</h2>
+
+<pre class="language-text">ALTER TABLE Asistentes
+CHANGE COLUMN nombres asisNombreCompleto VARCHAR(100) NOT NULL,
+CHANGE COLUMN edad asisEdad INT(3) NOT NULL,
+ADD COLUMN asisCorreo VARCHAR(70) NULL,
+ADD COLUMN asisTelefono VARCHAR(20) NULL;
+</pre>
+<h2 class="mume-header" id="-modificar-tabla-accidente">MODIFICAR TABLA Accidente</h2>
+
+<pre class="language-text">ALTER TABLE Accidente
+RENAME COLUMN accidenteId TO idAccidente,
+RENAME COLUMN dia TO acciFecha,
+CHANGE COLUMN hora acciHora TIME NOT NULL,
+CHANGE COLUMN lugar acciLugar VARCHAR(150) NOT NULL,
+CHANGE COLUMN origen acciOrigen VARCHAR(100) NOT NULL,
+RENAME COLUMN consecuencias TO acciConsecuencias;
+</pre>
+<h2 class="mume-header" id="-crear-tabla-visita">CREAR TABLA Visita</h2>
+
+<pre class="language-text">CREATE TABLE Visita(
+    idVisita INT(9) NOT NULL PRIMARY KEY,
+    visFecha DATE NOT NULL,
+    visHora TIME NULL,
+    visLugar VARCHAR(50) NOT NULL,
+    visComentarios VARCHAR(250) NOT NULL,
+    cliente_rutCliente INT(9) NOT NULL
+    idCheckeo INT NOT NULL
+);
+</pre>
+<h2 class="mume-header" id="-crear-fk-en-tabla-visita-con-checkeos">CREAR FK EN TABLA Visita con checkeos</h2>
+
+<pre class="language-text">ALTER TABLE Visita
+ADD CONSTRAINT visita_checkeo_FK
+FOREIGN KEY (idCheckeo) REFERENCES checkeos(id);
+</pre>
+<h2 class="mume-header" id="-crear-tabla-intermedia-visitacheckeo">CREAR TABLA INTERMEDIA visitaCheckeo</h2>
+
+<pre class="language-text">CREATE TABLE visitaCheckeo(
+    idVisita INT NOT NULL, /*FK VISITA*/
+    idCheckeo INT NOT NULL /*FK CHECKEO*/
+);
+</pre>
+<h2 class="mume-header" id="-crear-llave-for%C3%A1nea-entre-visita-y-cliente">CREAR LLAVE FOR&#xC1;NEA ENTRE VISITA Y CLIENTE</h2>
+
+<pre class="language-text">ALTER TABLE Visita
+ADD CONSTRAINT visita_cliente_FK
+FOREIGN KEY (cliente_rutCliente) REFERENCES Cliente(rutCliente);
+</pre>
+<h2 class="mume-header" id="-actividad">ACTIVIDAD</h2>
+
+<pre class="language-text">CREATE TABLE checkeos(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NULL
+);
+
+ALTER TABLE visitaCheckeo
+ADD CONSTRAINT visitaCheckeo_vista_FK
+FOREIGN KEY (idVisita) REFERENCES Visita(idVisita),
+
+ADD CONSTRAINT visitaCheckeo_checkeo_FK
+FOREIGN KEY (idCheckeo) REFERENCES checkeos(id)
+;
+
+CREATE TABLE resultadoCheckeo(
+    checkeos_id INT NOT NULL, FK CHECKEOS
+    resultadoCheckeo ENUM(&quot;CUMPLE&quot;,&quot;C/OBSERVACIONES&quot;,&quot;NO CUMPLE&quot;) NOT NULL
+);
+
+ALTER TABLE resultadoCheckeo
+ADD CONSTRAINT checkeos_resultadoCheckeo_FK
+FOREIGN KEY (checkeos_id) REFERENCES checkeos(id);
+
+CREATE TABLE usuarios(
+    id INT NOT NULL PRIMARY KEY,
+    run INT NOT NULL,
+    nombre VARCHAR(20) NULL,
+    apellidos VARCHAR(20) NULL,
+    fechaNac DATE NOT NULL
+);
+
+ALTER TABLE usuarios
+ADD COLUMN idUsuario INT NULL FK CLIENTE;
+
+ALTER TABLE usuarios
+ADD CONSTRAINT usuario_cliente_FK
+FOREIGN KEY (idUsuario) REFERENCES Cliente(rutCliente);
+
+CREATE TABLE administrativos(
+    run INT NOT NULL PRIMARY KEY,
+    nombres VARCHAR(45) NULL,
+    apellidos VARCHAR(45) NULL,
+    email VARCHAR(25) NULL,
+    area VARCHAR(25) NULL,
+    idUsuario INT NOT NULL FK usuario
+);
+
+ALTER TABLE administrativos
+ADD CONSTRAINT administrativos_usuario_FK
+FOREIGN KEY (idUsuario) REFERENCES usuarios(idUsuario);
+
+CREATE TABLE profesionales(
+    rut INT NOT NULL PRIMARY KEY,
+    nombres VARCHAR(45) NULL,
+    apellidos VARCHAR(45) NULL,
+    telefono INT NULL,
+    tituloProfesional VARCHAR(30) NULL,
+    proyecto VARCHAR(45) NULL,
+    idUsuario INT NOT NULL
+);
+
+ALTER TABLE profesionales
+ADD CONSTRAINT profesionales_usuario_FK
+FOREIGN KEY (idUsuario) REFERENCES usuarios(idUsuario);
+</pre>
+<p>A las tablas anteriores debe sumar las siguientes</p>
+<p>1.- Una tabla que registre los pagos de cada cliente. Esta tabla debe contener un campo<br>
+identificador correlativo autoincremental, la fecha del pago, el monto del pago, el mes y<br>
+a&#xF1;o que se est&#xE1; pagando (en campos distintos). Es necesario recordar que un cliente tiene<br>
+muchos pagos, pero un registro de pago se asociar&#xE1; solo a un cliente</p>
+<pre class="language-text">CREATE TABLE pagos(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    fechaPago DATE NOT NULL,
+    montoPago INT NOT NULL,
+    mes INT NOT NULL,
+    anio INT NOT NULL,
+    idCliente INT NOT NULL FK CLIENTE
+);
+
+ALTER TABLE pagos
+ADD CONSTRAINT pagos_cliente_FK
+FOREIGN KEY (idCliente) REFERENCES Cliente(rutCliente);
+</pre>
+<p>2.- Una tabla que registre asesor&#xED;as realizadas a los clientes. Una asesor&#xED;a es una actividad<br>
+de verificaci&#xF3;n de situaciones que pueden generar problemas en el mediano plazo. Por<br>
+cada una de estas instancias se desea conocer un c&#xF3;digo &#xFA;nico, la fecha de realizaci&#xF3;n, el motivo por el cual se solicita y el profesional al que se asignar&#xE1; dicha asesor&#xED;a (debe existir una llave for&#xE1;nea a la tabla profesional)</p>
+<pre class="language-text">CREATE TABLE asesoria(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    fecha DATE NOT NULL,
+    motivoSolicitud VARCHAR(50) NULL,
+    idProfesional INT NOT NULL /*FK PROFESIONAL*/
+);
+
+ALTER TABLE asesoria
+ADD CONSTRAINT profesionales_asesoria_FK
+FOREIGN KEY (idProfesional) REFERENCES profesionales(rut);
+</pre>
+<p>3.- Por cada asesor&#xED;a, se generan una o m&#xE1;s actividades de mejora, que son<br>
+recomendaciones que el profesional hace al cliente. En cada una de estas instancias se registra un campo &#xFA;nico autoincremental, el t&#xED;tulo de la actividad de mejora, la descripci&#xF3;n de esta y el plazo en d&#xED;as de resoluci&#xF3;n.</p>
+<pre class="language-text">CREATE TABLE mejoras(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    mejora VARCHAR(50) NULL,
+    descripcion VARCHAR(200) NULL,
+    plazo INT NOT NULL,
+    idAsesoria INT NOT NULL /*FK asesoria*/
+);
+ALTER TABLE mejoras
+ADD CONSTRAINT mejoras_asesoria_FK
+FOREIGN KEY (idAsesoria) REFERENCES asesoria(id);
+</pre>
+<p>En base al enunciado anterior, se solicita que realice las siguientes labores como parte de esta evaluaci&#xF3;n:</p>
+<p>1.- Script completo con la creaci&#xF3;n de la base de datos. Debe crear las tablas en el orden l&#xF3;gico, y debe considerar en ello todas las restricciones y elementos que sea necesario abordar</p>
+<p><strong>ESTE MISMO SCRIPT ES EL ENTREGABLE:<br>
+PERMITE CREAR BASE DE DATOS, CREAR TABLAS, CREAR LAS RELACIONES ENTRE TABLAS, E INSERCI&#xD3;N DE DATOS PARA POSTERIOR CONSULTA</strong></p>
+<p>2.-Al script anterior debe agregar consultas de inserci&#xF3;n de registros en cada tabla. Se pide como m&#xED;nimo tres registros en cada tabla insertados. Debe cuidar el orden l&#xF3;gico de inserci&#xF3;n de datos, a fin de no generar conflictos con las restricciones</p>
+<h2 class="mume-header" id="-insertar-registros-a-la-tabla-clientes">INSERTAR REGISTROS A LA TABLA CLIENTES</h2>
+
+<pre class="language-text">INSERT INTO Cliente
+(rutCliente, cliNombres, cliApellidos, cliTelefono, cliAfp, cliSistemaSalud, cliDireccion, cliComuna, cliEdad)
+VALUES
+(1, &quot;Benjam&#xED;n&quot;, &quot;Pav&#xE9;z&quot;, 555555, &quot;AFP A&quot;, 1, &quot;&quot;, &quot;Vi&#xF1;a del Mar&quot;, 25 ),
+(2, &quot;Mat&#xED;as&quot;, &quot;Calder&#xF3;n&quot;, 44444, &quot;AFP B&quot;, 2, &quot;&quot;, &quot;Vi&#xF1;a del Mar&quot;, 22 ),
+(3, &quot;Leonel&quot;, &quot;Briones&quot;, 33333, &quot;AFP C&quot;, 1, &quot;&quot;, &quot;Quillota&quot;, 40 ),
+(5, &quot;Priscila&quot;, &quot;Carrillo&quot;, 222222, &quot;AFP A&quot;, 2, &quot;&quot;, &quot;Valpara&#xED;so&quot;, 28 ),
+(4, &quot;Adri&#xE1;n&quot;, &quot;Fredes&quot;, 111111, &quot;AFP C&quot;, 1, &quot;&quot;, &quot;Casablanca&quot;, 28 )
+;
+</pre>
+<h2 class="mume-header" id="-insertar-registros-tabla-visita">INSERTAR REGISTROS TABLA VISITA</h2>
+
+<blockquote>
+<p>DATOS BENJAM&#xCD;N PAV&#xC9;Z</p>
+</blockquote>
+<pre class="language-text">INSERT INTO Visita VALUES 
+(&apos;1&apos;, &apos;25-07-23&apos;, &apos;16:30&apos;, &apos;Nogales&apos;, &apos;Visita sin novedades&apos;,&apos;5&apos;),
+(&apos;2&apos;, &apos;28-02-23&apos;, &apos;17:20&apos;, &apos;Ventana&apos;, &apos;Visita sin novedades&apos;,&apos;4&apos;),
+(&apos;3&apos;, &apos;12-01-23&apos;, &apos;18:00&apos;, &apos;Quintero&apos;, &apos;Atencion en enfermeria por malestares&apos;,&apos;1&apos;),
+(&apos;4&apos;, &apos;30-12-22&apos;, &apos;19:00&apos;, &apos;Valparaiso&apos;,&apos;Visita sin novedades&apos;,&apos;3&apos;),
+(&apos;5&apos;, &apos;15-02-23&apos;, &apos;12:30&apos;, &apos;Vi&#xF1;a del mar&apos;, &apos;Visita sin novedades&apos;,&apos;2&apos;);
+</pre>
+<h2 class="mume-header" id="-insertar-registros-tabla-checkeos">INSERTAR REGISTROS TABLA CHECKEOS</h2>
+
+<pre class="language-text">INSERT INTO checkeos VALUES
+(&apos;1&apos;,&apos;Claudia&apos;),
+(&apos;2&apos;,&apos;Jorge&apos;),
+(&apos;3&apos;,&apos;Luisa&apos;),
+(&apos;4&apos;,&apos;Hugo&apos;),
+(&apos;5&apos;,&apos;Raquel&apos;);
+</pre>
+<h2 class="mume-header" id="-insertar-registros-tabla-visitacheckeo">INSERTAR REGISTROS TABLA VISITACHECKEO</h2>
+
+<pre class="language-text">INSERT INTO visitaCheckeo VALUES  
+(&apos;1&apos;,&apos;1&apos;),
+(&apos;2&apos;,&apos;2&apos;),
+(&apos;3&apos;,&apos;3&apos;),
+(&apos;4&apos;,&apos;4&apos;),
+(&apos;5&apos;,&apos;5&apos;);
+</pre>
+<h2 class="mume-header" id="-insertar-registros-tabla-resultadocheckeo">INSERTAR REGISTROS TABLA RESULTADOCHECKEO</h2>
+
+<pre class="language-text">INSERT INTO resultadoCheckeo VALUES
+(&apos;1&apos;,&apos;CUMPLE&apos;),
+(&apos;2&apos;,&apos;CUMPLE&apos;),
+(&apos;3&apos;,&apos;C/OBSERVACIONES&apos;),
+(&apos;4&apos;,&apos;CUMPLE&apos;),
+(&apos;5&apos;,&apos;CUMPLE&apos;);
+</pre>
+<h2 class="mume-header" id="-insertar-registros-tabla-usuarios">INSERTAR REGISTROS TABLA USUARIOS</h2>
+
+<pre class="language-text">INSERT INTO usuarios VALUES
+(&apos;1&apos;,&apos;1&apos;,&apos;Matias&apos;,&apos;Calderon&apos;,&apos;2000-06-02&apos;,&apos;1&apos;),
+(&apos;2&apos;,&apos;2&apos;,&apos;Priscila&apos;,&apos;Carrillo&apos;,&apos;1995-05-03&apos;,&apos;2&apos;),
+(&apos;3&apos;,&apos;3&apos;,&apos;Leonel&apos;,&apos;Briones&apos;,&apos;1983-09-05&apos;,&apos;3&apos;),
+(&apos;4&apos;,&apos;4&apos;,&apos;Adrian&apos;,&apos;Fredes&apos;,&apos;1995-03-15&apos;,&apos;4&apos;),
+(&apos;5&apos;,&apos;5&apos;,&apos;Benjamin&apos;,&apos;Pavez&apos;,&apos;1998-05-02&apos;,&apos;5&apos;);
+</pre>
+<h2 class="mume-header" id="-insertar-registros-a-la-tabla-pagos">INSERTAR REGISTROS A LA TABLA PAGOS</h2>
+
+<pre class="language-text">INSERT INTO pagos
+(fechaPago, montoPago, mes, anio, idCliente)
+VALUES
+(&apos;2022/7/25&apos;, 149990, 7, 2022, 1),
+(&apos;2022/4/14&apos;, 78990, 4, 2022, 2),
+(&apos;2022/3/10&apos;, 45666, 3, 2022, 3),
+(&apos;2023/1/12&apos;, 145111, 1, 2023, 4),
+(&apos;2022/8/6&apos;,  745215, 8, 2023, 5)
+;
+</pre>
+<h2 class="mume-header" id="-insertar-registros-a-la-tabla-profesionales">INSERTAR REGISTROS A LA TABLA PROFESIONALES</h2>
+
+<pre class="language-text">INSERT INTO profesionales
+(rut, nombres, apellidos, telefono, tituloProfesional, proyecto, idUsuario)
+VALUES
+(123, &apos;Juan Benito&apos;, &apos;P&#xE9;rez Melo&apos;, 777777, &apos;Arquitecto&apos;, &apos;Proyecto A&apos;, 1),
+(456, &apos;Luz Mar&#xED;a&apos;, &apos;Gonz&#xE1;lez Tabilo&apos;, 888888, &apos;Ingeniera Civil&apos;, &apos;Proyecto A&apos;, 2),
+(789, &apos;Jos&#xE9; Felipe&apos;, &apos;Rodriguez Araya&apos;, 999999, &apos;Ingeniero Comercial&apos;, &apos;Proyecto B&apos;, 3),
+(012, &apos;Daniel Gustavo&apos;,&apos;Araya Carre&#xF1;o&apos;, 444444, &apos;Ingeniero Civil&apos;, &apos;Proyecto C&apos;, 4),
+(345, &apos;Pamela Constanza&apos;, &apos;Berr&#xED;os G&#xF3;mez&apos;, 555555, &apos;Ingeniera Comercial&apos;, &apos;Proyecto D&apos;, 5)
+;
+</pre>
+<h2 class="mume-header" id="-ingresar-registros-a-la-tabla-asesoria">INGRESAR REGISTROS A LA TABLA ASESORIA</h2>
+
+<pre class="language-text">INSERT INTO asesoria
+(fecha, motivoSolicitud, idProfesional)
+VALUES
+(&apos;2023/1/14&apos;, &apos;ASESORIA A&apos;, 123),
+(&apos;2022/2/14&apos;, &apos;ASESORIA B&apos;, 456),
+(&apos;2022/1/15&apos;, &apos;ASESORIA C&apos;, 789),
+(&apos;2021/12/16&apos;, &apos;ASESORIA D&apos;, 012),
+(&apos;2021/12/14&apos;, &apos;ASESORIA E&apos;, 345)
+;
+</pre>
+<h2 class="mume-header" id="-insertar-registros-mejora">INSERTAR REGISTROS MEJORA</h2>
+
+<pre class="language-text">INSERT INTO mejoras
+(mejora, descripcion, plazo, idAsesoria)
+VALUES
+(&apos;MEJORA 1&apos;, &apos;DESCRIPCION A&apos;, 5, 1),
+(&apos;MEJORA 2&apos;, &apos;DESCRIPCION B&apos;, 7, 2),
+(&apos;MEJORA 3&apos;, &apos;DESCRIPCION C&apos;, 4, 3),
+(&apos;MEJORA 4&apos;, &apos;DESCRIPCION D&apos;, 12, 4),
+(&apos;MEJORA 5&apos;, &apos;DESCRIPCION E&apos;, 4, 5)
+;
+</pre>
+<blockquote>
+<p>datos PRISCILA CARRILLO</p>
+</blockquote>
+<h2 class="mume-header" id="-insertar-registros-en-tabla-capacitacion">INSERTAR REGISTROS EN TABLA CAPACITACION</h2>
+
+<pre class="language-text">INSERT INTO Capacitacion
+(idCapacitacion, capFecha, capHora, capLugar, capDuracion, cliente_rutCliente)
+VALUES 
+(6, &apos;07-02-23&apos;, &apos;08:00&apos;, &quot;Vi&#xF1;a del mar&quot;, 35, 1 ),
+(7, &apos;08-02-23&apos;, &apos;09:00&apos;, &quot;Valparaiso&quot;, 40, 2 ),
+(8, &apos;09-02-23&apos;, &apos;10:00&apos;, &quot;Limache&quot;, 45, 3 ),
+(9, &apos;10-02-23&apos;, &apos;11:00&apos;, &quot;Pe&#xF1;ablanca&quot;, 2, 5 ),
+(10, &apos;11-02-23&apos;, &apos;12:00&apos;, &quot;Quilpue&quot;, 50, 4 )
+;
+</pre>
+<h2 class="mume-header" id="-insertar-registros-en-tabla-asistentes">INSERTAR REGISTROS EN TABLA ASISTENTES</h2>
+
+<pre class="language-text">INSERT INTO Asistentes
+(idAsistente, asisNombreCompleto, asisEdad, capacitacion_idCapacitacion, asisCorreo, asisTelefono)
+VALUES
+(10, &quot;Marcos Dur&#xE1;n&quot;, 30, 6, &quot;marcosduran@gmail.com&quot;, 95645324 ),
+(11, &quot;Sonia Guerra&quot;, 25, 7, &quot;soniaguerra@gmail.com&quot;, 93409888),
+(12, &quot;Maria Cabrera&quot;, 28, 8, &quot;mariacabrera@gmail.com&quot;, 92332109 ),
+(13, &quot;Monica Garrido&quot;, 29, 9, &quot;monicagarrido@gmail.com&quot;, 97800984 ),
+(14, &quot;Fernando Flores&quot;, 31, 10, &quot;fernandoflores@gmail.com&quot;, 97660456)
+;
+</pre>
+<blockquote>
+<p>datos MATIAS CALDER&#xD3;N</p>
+</blockquote>
+<h2 class="mume-header" id="-insertar-registros-en-tabla-accidente">INSERTAR REGISTROS EN TABLA ACCIDENTE</h2>
+
+<pre class="language-text">INSERT INTO Accidente
+(idAccidente, acciFecha, acciHora, acciLugar, acciOrigen, acciConsecuencias, cliente_rutCliente) 
+VALUES
+(11, &apos;05-04-23&apos;, &apos;22:00&apos;, &apos;Providencia&apos;, &apos;mal estacionado&apos;, &apos;parteEmpadronado&apos;, 1),
+(12, &apos;06-07-22&apos;, &apos;21:30&apos;, &apos;Calle7&apos;, &apos;atropello&apos;, &apos; heridos&apos;, 2),
+(13, &apos;11-03-22&apos;, &apos;15:45&apos;, &apos;Calle mirador&apos;, &apos;colicionPare&apos;, &apos; herido&apos;, 3),
+(14, &apos;06-04-19&apos;, &apos;16:15&apos;, &apos;Libertad&apos;, &apos;PersonaCorriendo&apos;, &apos;caida&apos;, 5),
+(15, &apos;07-05-23&apos;, &apos;17:45&apos;, &apos;Lomiras Bajo&apos;, &apos;Pelea de almunos&apos;, &apos;moreton&apos;, 4);
+</pre>
+<p>Diccionario de datos del modelo, indicando como m&#xED;nimo: nombre de la tabla, descripci&#xF3;n de la funci&#xF3;n de la tabla, listado con campos de la tabla indicando nombre, tipo de dato, precisi&#xF3;n y descripci&#xF3;n del campo. Debe indicar finalmente cual o cuales campos son parte de la llave primaria, y con qu&#xE9; tablas se relaciona.</p>
+<p><strong><a href="https://github.com/jarodsmdev/sqlFiles/blob/master/Diccionario.html" target="_blank">Enlace de descarga al diccionario</a></strong></p>
+<p>Finalmente, en un archivo aparte o bien en el mismo script indicado en el punto<br>
+inicial, genere tres consultas de b&#xFA;squeda de datos, que realicen lo siguiente:</p>
+<p>a) Realice una consulta que permita listar todas las capacitaciones de un cliente en<br>
+particular, indicando el nombre completo, la edad y el correo electr&#xF3;nico de los asistentes.</p>
+<pre class="language-text">SELECT a.asisNombreCompleto, a.asisEdad, a.asisCorreo, c.idCapacitacion
+FROM Capacitacion c
+JOIN Asistentes a
+ON a.capacitacion_idCapacitacion = c.idCapacitacion
+WHERE cliente_rutCliente = 2
+;
+
+
++--------------------+----------+-----------------------+----------------+
+| asisNombreCompleto | asisEdad | asisCorreo            | idCapacitacion |
++--------------------+----------+-----------------------+----------------+
+| Sonia Guerra       |       25 | soniaguerra@gmail.com |              7 |
++--------------------+----------+-----------------------+----------------+
+1 row in set (0,00 sec)
+</pre>
+<p>b) Realice una consulta que permita desplegar todas las visitas en terreno realizadas a los clientes que sean de la comuna de Valpara&#xED;so. Por cada visita debe indicar todos los chequeos que se hicieron en ella, junto con el estado de cumplimiento de cada uno.</p>
+<pre class="language-text">SELECT Cliente.cliNombres, Cliente.cliComuna, Visita.idVisita, visitaCheckeo.idCheckeo, checkeos.id, checkeos.nombre,resultadoCheckeo.resultadoCheckeo
+FROM resultadoCheckeo
+INNER JOIN checkeos
+ON resultadoCheckeo.checkeos_id = checkeos.id
+INNER JOIN visitaCheckeo
+ON checkeos.id = visitaCheckeo.idCheckeo
+INNER JOIN Visita
+ON visitaCheckeo.idVisita = Visita.idVisita
+INNER JOIN Cliente
+ON Cliente.rutCliente = Visita.cliente_rutCliente
+WHERE cliComuna = &apos;Valpara&#xED;so&apos;
+;
+
+
++------------+-------------+----------+-----------+----+---------+------------------+
+| cliNombres | cliComuna   | idVisita | idCheckeo | id | nombre  | resultadoCheckeo |
++------------+-------------+----------+-----------+----+---------+------------------+
+| Priscila   | Valpara&#xED;so  |        1 |         1 |  1 | Claudia | CUMPLE           |
++------------+-------------+----------+-----------+----+---------+------------------+
+1 row in set (0,00 sec)
+</pre>
+<p>c) Realice una consulta que despliegue los accidentes registrados para todos los clientes, indicando los datos de detalle del accidente, y el nombre, apellido, RUT y tel&#xE9;fono del<br>
+cliente al que se asocia dicha situaci&#xF3;n</p>
+<pre class="language-text">SELECT Accidente.acciFecha, Accidente.acciHora, Accidente.acciLugar, Accidente.acciOrigen, Accidente.acciConsecuencias, Cliente.cliNombres
+FROM Accidente
+INNER JOIN Cliente
+ON Cliente.rutCliente = Accidente.cliente_rutCliente
+ORDER BY Accidente.acciFecha
+;
+
+
++------------+----------+---------------+------------------+-------------------+------------+
+| acciFecha  | acciHora | acciLugar     | acciOrigen       | acciConsecuencias | cliNombres |
++------------+----------+---------------+------------------+-------------------+------------+
+| 2005-04-23 | 22:00:00 | Providencia   | mal estacionado  | parteEmpadronado  | Benjam&#xED;n   |
+| 2006-04-19 | 16:15:00 | Libertad      | PersonaCorriendo | caida             | Priscila   |
+| 2006-07-22 | 21:30:00 | Calle7        | atropello        |  heridos          | Mat&#xED;as     |
+| 2007-05-23 | 17:45:00 | Lomiras Bajo  | Pelea de almunos | moreton           | Adri&#xE1;n     |
+| 2011-03-22 | 15:45:00 | Calle mirador | colicionPare     |  herido           | Leonel     |
++------------+----------+---------------+------------------+-------------------+------------+
+5 rows in set (0,00 sec)
+</pre>
+</div></body></html>
+    </div>
+  </body>
+</html>
