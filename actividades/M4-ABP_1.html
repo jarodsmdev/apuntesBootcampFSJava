@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Apuntes</title>
+    <title>M4-ABP_1</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -17,32 +17,190 @@
   </head>
   <body for="html-export">
     <div class="mume markdown-preview">
-    <html><head></head><body><div><h1 class="mume-header" id="-apuntes-mysql">Apuntes MySQL</h1>
-      <ul>
-        <li><a href="./index.html">Inicio</a></li>
-        <li><a href="./ejercicios/ejercicios.html">BOOTCAMP FULLSTACK JAVA - SQL</a></li>
-        <li><a href="./actividades/ejercicios.html">BOOTCAMP FULLSTACK JAVA - JAVA</a></li>
-        
-        <li><a href="https://apuntes-java.netlify.app/">CURSO JAVA</a></li>
-      <hr>
-        <li><a href="./consultasSQL.html">Consultas SQL</a></li>
         <ul>
-          <li><a href="./funcionesAgregadas.html">Funciones Agregadas</a></li>
-          <li><a href="./group_by.html">Group by</a></li>
-          <li><a href="./having.html">Having</a></li>
-          <li><a href="./order_by.html">Order by</a></li>
-          <li><a href="./modificarEliminar.html">Modificar - Eliminar</a></li>
-          <li><a href="./ejerciciosSQL.html">Actividades</a></li>
-        </ul>
-        <li><a href="./foreignKey.html">Foreign Keys</a></li>
-        <li><a href="./transaccionesSQL.html">Transacciones SQL</a></li>
-        <li><a href="./advanced_querys/avanzado.html">SQL Avanzado</a></li>
-      </ul>
-    </div></body></html>
-    <hr>
-  </div>
-</body>
+            <li><a href="./../index.html">Inicio</a></li>
+            <hr>
+            <li><a href="./ejercicios.html">Volver a Ejercicios</a></li>
+          </ul>
+      <hr>
+    <html><head></head><body><div><h1 class="mume-header" id="-m4-abp_1">M4-ABP_1</h1>
+
+<hr>
+<h2 class="mume-header" id="-requerimiento-funcional">Requerimiento funcional:</h2>
+
+<p>Se pide que el algoritmo y pieza de c&#xF3;digo Java solicite al usuario cada uno de los valores antes mencionados, los almacene en una variable y los despliegue por pantalla. Adem&#xE1;s, debe realizar la validaci&#xF3;n que se indica en cada campo y, en caso de que alguna de las validaciones no se haya cumplido, debe retornar un mensaje de error.</p>
+<pre class="language-text">package m4_ABP1;
+
+import java.util.Scanner;
+
+public class ciaSeguros {
+
+public static void main(String[] args) {
+    // TODO Auto-generated method stub
+
+    // DECLARAR GLOBALES
+    String capturaDatos;
+    int i;
+
+    // Variables
+    int RUT;
+    String Nombres;
+    String Apellidos;
+    int Telefono;
+    String AFP;
+    int SistSalud;
+    String Direccion;
+    String Comuna;
+    int Edad;
+
+    // Instanciar la clase Scanner
+    Scanner myObj = new Scanner(System.in);
+
+
+
+    //Validacion de RUT (solo numeros, no vac&#xED;o)
+    System.out.println(&quot;Ingrese RUT:&quot;);
+    capturaDatos = myObj.nextLine();
+    if (isNumeric(capturaDatos)) {
+        RUT = Integer.parseInt(capturaDatos);
+        if (RUT &lt; 99999999) {
+            System.out.println(&quot;RUT: &quot; + RUT);
+        }else {
+            System.out.println(&quot;El Rut ingresado es un n&#xFA;mero muy alto&quot;);
+        }
+    }else {
+        System.out.println(&quot;Rut ingresado no es v&#xE1;lido&quot;);
+        System.exit(0);
+    }
+
+    //Validar Nombres Obligatorio
+    i = 0;
+    do {
+        System.out.println(&quot;[&quot;+ i +&quot;]Ingrese su Nombre: &quot;);
+        Nombres = myObj.nextLine().trim();
+        i++;
+    } while (Nombres.length() == 0);
+    System.out.println(&quot;Nombre: &quot; + Nombres);
+
+    //Validar Apellidos Obligatorio
+    i = 0;
+    do {
+        System.out.println(&quot;[&quot;+ i +&quot;]Ingrese su apellido: &quot;);
+        Apellidos = myObj.nextLine().trim();
+        i++;
+    } while (Apellidos.length() == 0);
+        System.out.println(&quot;Apellido: &quot; + Apellidos);
+
+    //Validar Tel&#xE9;fono no m&#xE1;s de 15 car&#xE1;cteres
+    do {
+        System.out.println(&quot;Ingrese su n&#xFA;mero telef&#xF3;nico: &quot;);
+        capturaDatos = myObj.nextLine().trim();
+        if (isNumeric(capturaDatos)) {
+            Telefono = Integer.parseInt(capturaDatos);
+            System.out.println(&quot;Tel&#xE9;fono: &quot; + Telefono);
+        }
+
+        } while (capturaDatos.length() &gt; 15);
+        if(capturaDatos.length() &gt;15) {
+            System.out.println(&quot;No m&#xE1;s de 15 d&#xED;gitos&quot;);
+        }
+
+    //validar afp obligatorio
+    i = 0;
+    do {
+        System.out.println(&quot;[&quot; + i + &quot;]Ingrese AFP: &quot;);
+        capturaDatos = myObj.nextLine().trim();
+        i++;
+        if (capturaDatos.length()&gt;0) {
+            AFP = capturaDatos;
+
+            System.out.println(&quot;AFP : &quot; + AFP);
+        }
+    }while(capturaDatos.length()==0);
+
+    //Validar Sistema salud 1 o 2
+    SistSalud = 0;
+    i = 0;
+    do {
+        System.out.println(&quot;[&quot; + i +&quot;]Ingrese Sistema de Salud: &quot;);
+        capturaDatos = myObj.nextLine().trim();
+
+        if (isNumeric(capturaDatos)) {
+            SistSalud = Integer.parseInt(capturaDatos);
+
+        }else {
+            System.out.println(&quot;El valor no es num&#xE9;rico&quot;);
+        }
+
+        i++;
+        if (SistSalud == 1 || SistSalud == 2) {
+            if(SistSalud == 1) {
+                System.out.println(&quot;Sistema de Salud: FONASA&quot;);
+            }else {
+                System.out.println(&quot;Sistema de Salud: Isapre&quot;);
+            }
+        }else {
+            System.out.println(&quot;Debe seleccionar 1 [Fonasa] o 2 [Isapre]&quot;);
+
+        }
+    }while(SistSalud != 1 &amp;&amp; SistSalud != 2);
+
+    // Validar direccion no superior a 50 caracteres
+    do {
+        System.out.println(&quot;Ingrese su direcci&#xF3;n: &quot;);
+        capturaDatos = myObj.nextLine().trim();
+        if (capturaDatos.length() &gt; 50) {
+            System.out.println(&quot;M&#xE1;ximo s&#xF3;lo 50 caracteres&quot;);
+        }else {
+            Direccion = capturaDatos;
+        };
+
+    }while(capturaDatos.length()&gt;50);
+
+    //Validar Comuna obligatorio
+    Comuna = &quot;&quot;;
+    i = 0;
+    do {
+    System.out.println(&quot;[&quot;+ i +&quot;]Ingrese su comuna: &quot;);
+    capturaDatos = myObj.nextLine().trim();
+    if (capturaDatos.length()&gt;0) {
+        Comuna = capturaDatos;
+    }
+    i++;
+    }while(capturaDatos.length() == 0);
+    System.out.println(&quot;Comuna: &quot; + Comuna );
+
+    // Validar edad menor a 120
+    i=0;
+    do {
+        System.out.println(&quot;[&quot;+ i +&quot;]Ingrese su edad: &quot;);
+        capturaDatos = myObj.nextLine().trim();
+        i++;
+        if (isNumeric(capturaDatos)) {
+            Edad = Integer.parseInt(capturaDatos);
+            if(Edad &lt; 0 || Edad &gt;120) {
+                System.out.println(&quot;Edades no v&#xE1;lidas, s&#xF3;lo se permite hasta 120 a&#xF1;os&quot;);
+            }
+        }else {
+            System.out.println(&quot;Valor ingresado no v&#xE1;lido&quot;);
+            Edad = 121;
+        }
+    }while(Edad &lt; 0 || Edad &gt; 120);
+    System.out.println(&quot;**FIN PROGRAMA**&quot;);
+
+
+}
+    private static boolean isNumeric(String cadena) {
+    try {
+        Integer.parseInt(cadena);
+        return true;
+    }catch (NumberFormatException nfe) {
+        return false;
+    }
+}
+}
+</pre>
+</div></body></html>
+    </div>
+  </body>
 </html>
-
-
-  
