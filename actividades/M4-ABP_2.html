@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BOOTCAMP FULLSTACK JAVA - JAVA</title>
+    <title>M4-ABP_2</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -17,75 +17,142 @@
   </head>
   <body for="html-export">
     <div class="mume markdown-preview">
-    <html><head></head><body><div><h1 class="mume-header" id="-ejercicios-msql">BOOTCAMP FULL STACK - JAVA</h1>
-      
-      <a href="https://talentodigitalparachile.cl/curso/desarrollo-de-aplicaciones-full-stack-java-trainee/" target="_blank">Enlace a Talento Digital</a>
-      <hr>
-      <ul>
-        <li><a href="./../index.html">Inicio</a></li>
-      </ul> 
-        <hr>
-        <p>1. El lenguaje Java y su entorno</p>
-      <ul>
-          <li><a href="./M4-ABP_1.html">M4-ABPRO_1</a></li>
-      </ul>
-        <hr>
-        <p>2.- Teoría de Conjuntos y Lógica Preposicional</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>3.-  El entorno Java para la Programación</p>
         <ul>
-          <li><a href="./M4-ABP_2.html">M4-ABP_2</a></li>
-          <li><a href="./M4-ABP_3.html">M4-ABP_3</a></li>
-      </ul>
-        <hr>
-        <p>4.-  Arreglos y colecciones en Java</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>5.-  Funciones en Java</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>6.-  Estandares y Convenciones</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>7.-  Programación orientada a objetos</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>8.-  Diagrama de Clases</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>9.- Herencia y Polimorfísmo</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>10.- Principios básicos de diseño Orientado a Objetos</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>11.- Pruebas Unitarias</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        
+            <li><a href="./../index.html">Inicio</a></li>
+            <hr>
+            <li><a href="./ejercicios.html">Volver a Ejercicios</a></li>
+          </ul>
+      <hr>
+    <html><head></head><body><div><h1 class="mume-header" id="-m4-abp_2">M4-ABP_2</h1>
 
-    </ul>
 <hr>
-<a href="" target="_blank"></a>
+<p>Considere el siguiente enunciado. Determine las unidades al m&#xED;nimo nivel de detalle, y expr&#xE9;selas<br>
+como un conjunto de expresiones l&#xF3;gicas</p>
+<p><em>&#x201C;Una persona debe permanecer 14 d&#xED;as en observaci&#xF3;n &#xFA;nicamente si ha salido del pa&#xED;s. La persona se har&#xE1; el PCR si quiere volver a la normalidad. Dado que ni la persona ha salido del pa&#xED;s ni presenta contagios cercanos, no tendr&#xE1; que hacer cuarentena ni se le har&#xE1; el PCR.&#x201D;</em></p>
+<h2 class="mume-header" id="-notaci%C3%B3n-l%C3%B3gica-proposicional">Notaci&#xF3;n L&#xF3;gica proposicional</h2>
+
+<pre class="language-text">P: Una persona ha salido del pa&#xED;s
+Q: La personal presenta contactos cercanos
+R: Una persona debe permanecer 14 dias en observaci&#xF3;n
+S: La persona se har&#xE1; el PCR
+
+(P &#x2192; R) ^ (&#x2510;P v &#x2510;Q) &#x2192; (&#x2510;R ^ &#x2510;S)
+</pre>
+<p>.</p>
+<pre class="language-text">si (salida) hacer
+    observacion
+    hacerPCR
+si no
+    si (contactoCercano) entonces
+        observacion
+        hacer_PCR
+    sino
+        normalidad
+    fin si
+fin si
+</pre>
+<h2 class="mume-header" id="-c%C3%B3digo-java">C&#xF3;digo JAVA</h2>
+
+<pre class="language-text">package m4_ABP_2;
+import java.util.Scanner;
+
+public class M4_ABP_2 {
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+
+        Scanner scanText = new Scanner(System.in); //Instancia de clase Scanner
+        boolean out_country = false; //Declaraci&#xF3;n e inicializaci&#xF3;n de out_country
+        boolean close_infections = false; // Declaraci&#xF3;n e inicializaci&#xF3;n de close_infections
+        int pcr_result = 0; // Declaraci&#xF3;n de variable (SE CALCULAR&#xC1; CON MATH.RANDOM)
+        String textCapture = &quot;&quot;; //Declaraci&#xF3;n e inicializacion de textCapture
+
+
+        ShowMessage(&quot;**Inicio Programa**&quot;);
+
+        //bloque si ha salido del pais
+        do{
+            ShowMessage(&quot;&#xBF;Usted ha salido del pa&#xED;s?&quot;); //Muestra mensaje en pantalla
+            textCapture = scanText.nextLine().trim().toLowerCase();
+            if(textCapture.equals(&quot;si&quot;)){
+                out_country = true;
+            }else{
+                out_country = false;
+            }
+        }while(textCapture.length() == 0 || (!textCapture.equals(&quot;si&quot;) &amp;&amp; !textCapture.equals(&quot;no&quot;)));
+
+        // SALI&#xD3; DEL PA&#xCD;S
+        if(out_country){
+            ShowMessage(&quot;Debe estar 14 d&#xED;as en observaci&#xF3;n&quot;);
+            do{
+                ShowMessage(&quot;Con un examen de PCR NEGATIVO, puede volver a la normalidad, sin estar en observaci&#xF3;n\n&gt;&#xBF;Desea realizarlo?&quot;);
+                textCapture = scanText.nextLine().trim().toLowerCase();
+                if(textCapture.equals(&quot;si&quot;)){
+                    close_infections = true;
+                }else{
+                    close_infections = false;
+                }
+            }while(textCapture.length() == 0 || (!textCapture.equals(&quot;si&quot;) &amp;&amp; !textCapture.equals(&quot;no&quot;)));
+
+            //DESEA HACER PCR
+            if(textCapture.equals(&quot;si&quot;)){
+                //SIMULA UN RESULTADO PCR 50% PROBABILIDADES ENTRE 0 Y 1
+                pcr_result = (int)(Math.random()*2); 
+
+
+                //Valida resultado de pcr_result POSITIVO/NEGATIVO
+                if(pcr_result == 1){
+                    //RESULTADO POSITIVO
+                    ShowMessage(&quot;\n+-----------------------------------+\n| Resultado PCR: [+] POSITIVO [+]   |\n| DEBE HACER CUARENTENA OBLIGATORIA |\n+-----------------------------------+&quot;);
+                }else{
+                    //RESULTADO NEGATIVO
+                    ShowMessage(&quot;\n+---------------------------------+\n| Resultado PCR: [-] NEGATIVO [-] |\n| PUEDE VOLVER A LA NORMALIDAD    |\n+---------------------------------+&quot;);
+                }
+            }else{
+                //USUARIO NO DESEA HACER PCR
+                ShowMessage(&quot;***Debe hacer cuarentena OBLIGATORIA por 14 d&#xED;as.***&quot;);
+            };
+
+        //NO SALI&#xD3; DEL PAIS
+        }else{
+            // PREGUNTAR POR CONTACTO ESTRECHO
+            do{
+                //MUESTRA PREGUNTA EN CONSOLA
+                ShowMessage(&quot;&#xBF;Ha tenido contacto con alguien que haya estado con s&#xED;ntomas?&quot;);
+                //CAPTURA RESPUESTA DEL USUARIO POR CONSOLA
+                textCapture = scanText.nextLine().trim().toLowerCase();
+                // VALIDA RESPUESTA SI O NO Y MODIFICA LA VARIABLE close_infections TRUE O FALSE SEGUN CORRESPONDA
+                if(textCapture.equals(&quot;si&quot;)){
+                    close_infections = true;
+                }else{
+                    close_infections = false;
+                };
+            //MANIENE EL BUCLE MIENTRAS LA RESPUESTA VAC&#xCD;A, O SEA DISTINTA A SI O NO    
+            }while(textCapture.length()== 0 || (!textCapture.equals(&quot;si&quot;) &amp;&amp; !textCapture.equals(&quot;no&quot;)));
+
+            //CONDICIONAL RESPUESTA SI O NO
+            if (close_infections == true){
+                //CASO DE TENER CONTACTO ESTRECHO
+                ShowMessage(&quot;Debe realizarse examen PCR para volver a la normalidad.&quot;);
+            }else{
+                //CASO DE NO TENER CONTACTO ESRECHO
+                ShowMessage(&quot;No es necesario hacer cuarentena, ni realizar examen PCR.&quot;);
+            };
+        }
+        
+        ShowMessage(&quot;**Fin Programa**&quot;);
+        //CERRAR EL OBJETO SCANTEXT DE TIPO SCANNER
+        scanText.close();
+    }
+
+    // FUNCI&#xD3;N PARA MOSTRAR MENSAJE EN PANTALLA (STRING)
+    private static String ShowMessage(String message){
+        System.out.println(message);
+        return message;
+    }
+
+
+}
+</pre>
 </div></body></html>
     </div>
   </body>
