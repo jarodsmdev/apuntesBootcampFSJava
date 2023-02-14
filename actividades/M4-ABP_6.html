@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BOOTCAMP FULLSTACK JAVA - JAVA</title>
+    <title>M4-ABP-6</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -17,78 +17,43 @@
   </head>
   <body for="html-export">
     <div class="mume markdown-preview">
-    <html><head></head><body><div><h1 class="mume-header" id="-ejercicios-msql">BOOTCAMP FULL STACK - JAVA</h1>
-      
-      <a href="https://talentodigitalparachile.cl/curso/desarrollo-de-aplicaciones-full-stack-java-trainee/" target="_blank">Enlace a Talento Digital</a>
-      <hr>
-      <ul>
-        <li><a href="./../index.html">Inicio</a></li>
-      </ul> 
-        <hr>
-        <p>1. El lenguaje Java y su entorno</p>
-      <ul>
-          <li><a href="./M4-ABP_1.html">M4-ABPRO_1</a></li>
-      </ul>
-        <hr>
-        <p>2.- Teoría de Conjuntos y Lógica Preposicional</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>3.-  El entorno Java para la Programación</p>
         <ul>
-          <li><a href="./M4-ABP_2.html">M4-ABP_2</a></li>
-          <li><a href="./M4-ABP_3.html">M4-ABP_3</a></li>
-      </ul>
-        <hr>
-        <p>4.-  Arreglos y colecciones en Java</p>
-      <ul>
-          <li><a href="./M4-ABPRO_2.html">M4-ABPRO_2</a></li>
-          <li><a href="./M4-ABP_5.html">M4-ABP_5</a></li>
-          <li><a href="./M4-ABP_6.html">M4-ABP_6</a></li>
+            <li><a href="./../index.html">Inicio</a></li>
+            <hr>
+            <li><a href="./ejercicios.html">Volver a Ejercicios</a></li>
+          </ul>
+      <hr>
+    <html><head></head><body><div><h1 class="mume-header" id="-m4-abp_6">M4-ABP_6</h1>
 
-      </ul>
-        <hr>
-        <p>5.-  Funciones en Java</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>6.-  Estandares y Convenciones</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>7.-  Programación orientada a objetos</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>8.-  Diagrama de Clases</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>9.- Herencia y Polimorfísmo</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>10.- Principios básicos de diseño Orientado a Objetos</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>11.- Pruebas Unitarias</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        
-
-    </ul>
 <hr>
-<a href="" target="_blank"></a>
+<pre class="language-text">package m4ABP6;
+
+import javax.swing.*;
+
+public class M4ABP6 {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        String password = &quot;12345&quot;;
+        String capture = &quot;&quot;;
+        int tries = 3;
+        int count = 0;
+
+        do {
+            capture = JOptionPane.showInputDialog(&quot;Ingrese su contrase&#xF1;a&quot;);
+            if(!capture.equals(password)) {
+                System.out.println(&quot;[ERROR] Contrase&#xF1;a incorrecta.&quot;);
+                count++;
+                if(count == tries) {
+                    System.out.println(&quot;INTENTOS M&#xC1;XIMOS PERMITIDOS&quot;);
+                }
+            }else {
+                System.out.println(&quot;ACCESO GARANTIZADO&quot;);
+            }
+        }while(!password.equals(capture) &amp;&amp; count &lt; tries);
+    }
+}
+</pre>
 </div></body></html>
     </div>
   </body>
