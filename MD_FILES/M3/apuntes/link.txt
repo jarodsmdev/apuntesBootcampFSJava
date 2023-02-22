@@ -1,0 +1,42 @@
+https://thedataschools.com/sql/foreign-key/
+
+
+USE CAPACITACION2;
+
+SELECT  lugar, duracion, dia, hora 
+FROM CAPACITACION
+WHERE (select count(*) FROM ASISTENTES a WHERE CAPACITACION.id = a.capacitacion_idcapacitacion ) >= 3;
+
+SELECT  lugar, duracion, dia, hora 
+FROM
+(SELECT c.lugar, c.duracion, c.dia, c.hora, 
+count(a.capacitacion_idcapacitacion) as totales
+FROM capacitacion c
+INNER JOIN ASISTENTES a on a.capacitacion_idcapacitacion = c.id
+GROUP BY c.lugar, c.duracion, c.dia, c.hora
+HAVING totales >= 3
+) AS asistencia;
+
+
+ADD COLUMN
+    Añada una columna. Esta entrada no se puede especificar en un bloque de transacción.
+ADD <table_constraint>
+    Añada una restricción de tabla.
+ALTER [COLUMN]
+    Cambie o descarte un valor predeterminado de columna.
+DROP [COLUMN]
+    Descarte una columna. Las restricciones que dependen de la columna descartada también se descartan automáticamente. Esta entrada no se puede especificar en un bloque de transacción. No se puede descartar una columna de distribución, una columna “organize on” o la última columna restante de una tabla.
+
+    Si se descarta una columna y se desea reutilizar su nombre, antes hay que ejecutar el comando GROOM TABLE <tablename> VERSIONS; si no, pueden producirse errores.
+DROP CONSTRAINT
+    Descarte una restricción.
+MODIFY COLUMN
+    Cambie la longitud de una columna.
+OWNER TO
+    Cambie el propietario de la tabla.
+RENAME [COLUMN]
+    Cambie el nombre de una columna.
+RENAME TO
+    Cambie el nombre de la tabla. Cuando se cambia el nombre de una tabla, todas las vistas que se basan en la tabla dejan de funcionar porque las vistas utilizan enlace de nombre.
+SET PRIVILEGES TO
+    Establezca los privilegios de la tabla modificada como los de otra tabla. 

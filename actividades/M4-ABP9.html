@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BOOTCAMP FULLSTACK JAVA - JAVA</title>
+    <title>M4 ABP9</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -17,83 +17,121 @@
   </head>
   <body for="html-export">
     <div class="mume markdown-preview">
-    <html><head></head><body><div><h1 class="mume-header" id="-ejercicios-msql">BOOTCAMP FULL STACK - JAVA</h1>
-      
-      <a href="https://talentodigitalparachile.cl/curso/desarrollo-de-aplicaciones-full-stack-java-trainee/" target="_blank">Enlace a Talento Digital</a>
-      <hr>
-      <ul>
-        <li><a href="./../index.html">Inicio</a></li>
-      </ul> 
-        <hr>
-        <p>1. El lenguaje Java y su entorno</p>
-      <ul>
-          <li><a href="./M4-ABP_1.html">M4-ABPRO_1</a></li>
-      </ul>
-        <hr>
-        <p>2.- Teoría de Conjuntos y Lógica Preposicional</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>3.-  El entorno Java para la Programación</p>
         <ul>
-          <li><a href="./M4-ABP_2.html">M4-ABP_2</a></li>
-          <li><a href="./M4-ABP_3.html">M4-ABP_3</a></li>
-      </ul>
-        <hr>
-        <p>4.-  Arreglos y colecciones en Java</p>
-      <ul>
-          <li><a href="./M4-ABPRO_2.html">M4-ABPRO_2</a></li>
-          <li><a href="./M4-ABP_5.html">M4-ABP_5</a></li>
-          <li><a href="./M4-ABP_6.html">M4-ABP_6</a></li>
+            <li><a href="./../index.html">Inicio</a></li>
+            <hr>
+            <li><a href="./ejercicios.html">Volver a Ejercicios</a></li>
+          </ul>
+      <hr>
+    <html><head></head><body><div><h1 class="mume-header" id="-m4-abp9">M4-ABP9</h1>
 
-      </ul>
-        <hr>
-        <p>5.-  Funciones en Java</p>
-      <ul>
-          <li><a href="https://github.com/jarodsmdev/m4Java/blob/master/JAVA_FILES_BOOTCAMP/MODULO4/src/m4ABPRO3/M4_ABPRO3.java" target="_blank">M4 ABPRO3 [Github]</a></li>
-          <li><a href="./M4-ABP7.html">M4 ABP7</a></li>
-          <li><a href="./M4-ABP8.html">M4 ABP8</a></li>
-          <li><a href="./M4-ABP9.html">M4 ABP9</a></li>
-      </ul>
-        <hr>
-        <p>6.-  Estandares y Convenciones</p>
-      <ul>
-          <li><a href="https://github.com/jarodsmdev/m4Java/blob/master/PRUEBA_DIAGNOSTICO/m4ABPRO4/src/m4ABPRO4/M4APBRO4.java" target="_blank">M4 ABPRO4 Evaluación diagnóstica [Github]</a></li>
-      </ul>
-        <hr>
-        <p>7.-  Programación orientada a objetos</p>
-      <ul>
-          <li><a href="https://github.com/jarodsmdev/m4Java/tree/master/JAVA_FILES_BOOTCAMP/EmpresaClase13/src/m4ABPRO5" target="_blank">M4 ABPRO5 [Github]</a></li>
-          <li><a href="./M4-ABP10.html">M4 ABP10</a></li>
-          <li><a href="./M4-ABP11.html">M4 ABP11</a></li>
-      </ul>
-        <hr>
-        <p>8.-  Diagrama de Clases</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>9.- Herencia y Polimorfísmo</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>10.- Principios básicos de diseño Orientado a Objetos</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        <p>11.- Pruebas Unitarias</p>
-      <ul>
-          <li><a href="#"></a></li>
-      </ul>
-        <hr>
-        
-
-    </ul>
 <hr>
-<a href="" target="_blank"></a>
+<pre class="language-text">package m4ABP9;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Collections;
+
+public class M4ABP9 {
+static Scanner scanner = new Scanner(System.in);
+static String capturador = &quot;&quot;;
+static int contador = 1;
+static ArrayList&lt;Integer&gt; listaNumeros = new ArrayList&lt;Integer&gt;();
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        ingresoNumeros();
+        System.out.println(&quot;C&#xC1;LCULO DE LA LISTA DE N&#xDA;MEROS&quot;);
+        System.out.println(&quot;Promedio: &quot; + calculaPromedio(listaNumeros));
+        System.out.println(&quot;N&#xFA;mero Minimo: &quot; + calculaNumMin(listaNumeros));
+        System.out.println(&quot;N&#xFA;mero M&#xE1;ximo: &quot; + calculaNumMax(listaNumeros));
+        System.out.println(&quot;&quot;);
+        //ELIMINA PARES
+        eliminaNumPares(listaNumeros);
+
+        System.out.println(&quot;C&#xC1;LCULO DE LA LISTA SIN N&#xDA;MEROS PARES&quot;);
+        System.out.println(&quot;Promedio : &quot; + calculaPromedio(listaNumeros));
+        System.out.println(&quot;N&#xFA;mero M&#xED;nimo : &quot; + calculaNumMin(listaNumeros));
+        System.out.println(&quot;N&#xFA;mero M&#xE1;ximo : &quot; + calculaNumMax(listaNumeros));
+    }
+
+    //FUNCI&#xD3;N QUE VALIDA INGRESO DE NUMEROS AL ARRAY
+    public static void ingresoNumeros() {
+        do {
+            System.out.println(&quot;[+] Ingrese N&#xFA;mero Entero #&quot; + contador + &quot;\n[Para salir ingrese 0]&quot;);
+            capturador = scanner.nextLine();
+            if(!isNumeric(capturador)){
+                System.out.println(&quot;[ERROR] Ingrese s&#xF3;lo valores Num&#xE9;ricos&quot;);
+            }else if(capturador.trim().length() == 0){
+                System.out.println(&quot;[ERROR] No puede estar vac&#xED;o&quot;);
+            }else if(listaNumeros.size() &lt; 3 &amp;&amp; Integer.parseInt(capturador)==0){
+                System.out.println(&quot;[ERROR] No puede salir, a menos que haya ingresado 3 n&#xFA;mero enteros&quot;);
+            }else if(Integer.parseInt(capturador)!=0){
+                //CONDICI&#xD3;N QUE SE CUMPLE CUANDO SE CUMPLEN TODAS LA VALIDACIONES
+                guardarNumero(Integer.parseInt(capturador));
+            }
+        }while(!isNumeric(capturador)
+                || capturador.trim().length()==0
+                || Integer.parseInt(capturador)!= 0
+                || listaNumeros.size()&lt;3
+                );
+
+    }
+
+    //FUNCI&#xD3;N QUE GUARDA EL NUMERO DENTRO DEL ARRAYLIST
+    public static void guardarNumero(int capturador) {
+        listaNumeros.add(capturador);
+        contador++;
+        System.out.println(listaNumeros);
+        System.out.println(listaNumeros.size());
+    }
+
+    //FUNCION QUE CALCULA EL PROMEDIO SIMPLE
+    public static double calculaPromedio(ArrayList&lt;Integer&gt;listaNumeros) {
+        double promedio;
+        int suma = 0;
+        for(int i = 0; i &lt; listaNumeros.size(); i++) {
+            suma += listaNumeros.get(i);
+        }
+        promedio = suma /listaNumeros.size();
+        return promedio;
+    }
+
+    //FUNCION QUE DEVUELVE NUMERO MAX
+    public static int calculaNumMax(ArrayList&lt;Integer&gt;listaNumeros) {
+        int numMax;
+        numMax = Collections.max(listaNumeros);
+        return numMax;
+    }
+
+    //FUNCION QUE DEVUELVE NUMERO MIN
+    public static int calculaNumMin(ArrayList&lt;Integer&gt;listaNumeros) {
+        int numMin;
+        numMin = Collections.min(listaNumeros);
+        return numMin;
+    }
+
+    //FUNCION PARA ELIMINAR N&#xDA;MERO PARES
+    public static void eliminaNumPares(ArrayList&lt;Integer&gt;listaNumeros) {
+        for(int i = 0; i &lt; listaNumeros.size(); i++) {
+            if(listaNumeros.get(i)%2==0) {
+                listaNumeros.remove(i);
+                i--;
+            }
+        }
+    }
+
+
+    //FUNCION QUE DEVUELVE TRUE EN CASO DE QUE LA CADENA SE PUEDA CONVERTIR A N&#xDA;MERO
+    private static boolean isNumeric(String cadena){
+        try{
+            Integer.parseInt(cadena);
+            return true;
+        }catch(NumberFormatException nfe){
+            return false;
+        }
+    }
+}
+</pre>
 </div></body></html>
     </div>
   </body>
