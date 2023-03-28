@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Apuntes</title>
+    <title>PostgreSQL Ubuntu 22.04</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -17,49 +17,84 @@
   </head>
   <body for="html-export">
     <div class="mume markdown-preview">
-    <html><head></head><body><div><h1 class="mume-header" id="-apuntes-mysql">Apuntes</h1>
       <ul>
         <li><a href="./index.html">Inicio</a></li>
-        <li><a href="./ejercicios/ejercicios.html">BOOTCAMP FULLSTACK - SQL</a></li>
-        <li><a href="./actividades/ejercicios.html">BOOTCAMP FULLSTACK - JAVA</a></li>
-        
-        <li><a href="https://apuntes-java.netlify.app/">CURSO JAVA</a></li>
-      </ul>
-      <hr>
-      <h2>Apuntes GIT</h2>
-      <ul>
-        <li><a href="./git_notes/index.html">Indice GIT</a></li>
-      </ul>
-      <hr>
-      <h2>Apuntes SQL</h2>
-
-      <h3>Instalacion Gestores BBDD</h3>
-      <ul>
-        <li><a href="./instalar_postgresql.html">PostgreSQL</a></li>
-        <li><a href="./mysqlUbuntu.html">MySQL</a></li>
-      </ul>
-
-      <h3>Ejemplos</h3>
-      <ul>
-        <li><a href="./consultasSQL.html">Consultas SQL</a></li>
-        <ul>
-          <li><a href="./funcionesAgregadas.html">Funciones Agregadas</a></li>
-          <li><a href="./group_by.html">Group by</a></li>
-          <li><a href="./having.html">Having</a></li>
-          <li><a href="./order_by.html">Order by</a></li>
-          <li><a href="./modificarEliminar.html">Modificar - Eliminar</a></li>
-          <li><a href="./ejerciciosSQL.html">Actividades</a></li>
-        </ul>
-        <li><a href="./foreignKey.html">Foreign Keys</a></li>
-        <li><a href="./transaccionesSQL.html">Transacciones SQL</a></li>
+        <li><a href="./ejercicios/ejercicios.html">BOOTCAMP FULLSTACK JAVA - SQL</a></li>
         <li><a href="./advanced_querys/avanzado.html">SQL Avanzado</a></li>
       </ul>
-      
-    </div></body></html>
-    <hr>
-  </div>
-</body>
+      <hr>
+        
+    <html><head></head><body><div><h1 class="mume-header" id="instalar-postgresql-linux-ubuntu-2204" ebook-toc-level-1 heading="Instalar Postgresql Linux ubuntu 22.04">Instalar Postgresql Linux ubuntu 22.04</h1>
+
+<p><a href="https://www.postgresql.org/download/linux/ubuntu/">Enlace a la p&#xE1;gina oficial</a></p>
+<p>Descargar e instalar postgres en su &#xFA;ltima versi&#xF3;n:</p>
+<pre class="language-text">sudo apt update
+
+sudo apt-get -y install postgresql postgresql-contrib
+</pre>
+<p>Ingrese a PostgreSQL con el siguiente comando:</p>
+<pre class="language-text">sudo su - postgre
+
+psql
+</pre>
+<p>Crear usuario y la contrase&#xF1;a para administrar BBDD con PostgreSQL</p>
+<pre class="language-text">create user [usuario] with password &apos;[contrase&#xF1;a]&apos;;
+&gt;&gt;CREATE ROLE
+</pre>
+<p>Dar permisos de usuari oa [usuario]:</p>
+<pre class="language-text">alter user [usuario] with superuser;
+&gt;&gt;ALTER ROLE
+</pre>
+<h2 class="mume-header" id="crear-la-primera-base-de-datos-con-postgresql" ebook-toc-level-2 heading="CREAR LA PRIMERA BASE DE DATOS CON POSTGRESQL">CREAR LA PRIMERA BASE DE DATOS CON POSTGRESQL</h2>
+
+<p>El siguiente comando se crea una BBDD:</p>
+<pre class="language-text">create datatable tutorial_db owner [usuario];
+&gt;&gt;CREATE DATABASE
+</pre>
+<p>Listar bases de datos:</p>
+<pre class="language-text">\l
+\list
+</pre>
+<h2 class="mume-header" id="salir-de-postgres-en-la-terminal" ebook-toc-level-2 heading="SALIR DE POSTGRES EN LA TERMINAL">SALIR DE POSTGRES EN LA TERMINAL</h2>
+
+<pre class="language-text">exit
+&gt;&gt;postgres@540uar:$
+exit
+&gt;&gt;logout
+</pre>
+<h2 class="mume-header" id="instalar-pgadmin" ebook-toc-level-2 heading="INSTALAR PGADMIN">INSTALAR PGADMIN</h2>
+
+<p><a href="https://www.pgadmin.org/download/pgadmin-4-apt/">ENLACE DOCUMENTACION OFICIAL</a></p>
+<p>Debemos tener instalado curl:</p>
+<pre class="language-text">sudo apt install curl
+</pre>
+<p>Instale la clave p&#xFA;blica para el repositorio:</p>
+<pre class="language-text">curl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /usr/share/keyrings/packages-pgadmin-org.gpg
+&gt;&gt;OK
+</pre>
+<p>Crear el archivo de configuraci&#xF3;n del repositorio:</p>
+<pre class="language-text">sudo sh -c &apos;echo &quot;deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main&quot; &gt; /etc/apt/sources.list.d/pgadmin4.list &amp;&amp; apt update&apos;
+</pre>
+<p>Instalar PgAdmin4</p>
+<pre class="language-text">sudo apt install pgadmin4
+&gt;Este comando instalar&#xE1; pgadmin tanto para desktop como web
+</pre>
+<h2 class="mume-header" id="ejecutar-pgadmin4" ebook-toc-level-2 heading="EJECUTAR PgAdmin4">EJECUTAR PgAdmin4</h2>
+
+<p>Buscar en tus aplicaciones logo de pgadmin o postgresql,</p>
+<blockquote>
+<p>Se debe ingresar la contrase&#xF1;a anteriormente configurada</p>
+</blockquote>
+<p>En la pesta&#xF1;a Tablero/Dashboard ir a &apos;Add New server/Agregar un Nuevo Servidor&apos;</p>
+<ul>
+<li>En &apos;general&apos; nombre de servidor ej: &apos;midb&apos;</li>
+<li>En &apos;connection&apos; Host: &apos;localhost&apos;</li>
+<li>El puerto por defecto (5432)</li>
+<li>En username [usuario registrado]</li>
+<li>En password [contrase&#xF1;a registrada]</li>
+</ul>
+<p><a href="https://www.pgadmin.org/download/pgadmin-4-apt/">pgadmin oficial site instalation</a></p>
+</div></body></html>
+    </div>
+  </body>
 </html>
-
-
-  

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Apuntes</title>
+    <title>Mysql Ubuntu 22.04</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -17,49 +17,71 @@
   </head>
   <body for="html-export">
     <div class="mume markdown-preview">
-    <html><head></head><body><div><h1 class="mume-header" id="-apuntes-mysql">Apuntes</h1>
       <ul>
         <li><a href="./index.html">Inicio</a></li>
-        <li><a href="./ejercicios/ejercicios.html">BOOTCAMP FULLSTACK - SQL</a></li>
-        <li><a href="./actividades/ejercicios.html">BOOTCAMP FULLSTACK - JAVA</a></li>
-        
-        <li><a href="https://apuntes-java.netlify.app/">CURSO JAVA</a></li>
-      </ul>
-      <hr>
-      <h2>Apuntes GIT</h2>
-      <ul>
-        <li><a href="./git_notes/index.html">Indice GIT</a></li>
-      </ul>
-      <hr>
-      <h2>Apuntes SQL</h2>
-
-      <h3>Instalacion Gestores BBDD</h3>
-      <ul>
-        <li><a href="./instalar_postgresql.html">PostgreSQL</a></li>
-        <li><a href="./mysqlUbuntu.html">MySQL</a></li>
-      </ul>
-
-      <h3>Ejemplos</h3>
-      <ul>
-        <li><a href="./consultasSQL.html">Consultas SQL</a></li>
-        <ul>
-          <li><a href="./funcionesAgregadas.html">Funciones Agregadas</a></li>
-          <li><a href="./group_by.html">Group by</a></li>
-          <li><a href="./having.html">Having</a></li>
-          <li><a href="./order_by.html">Order by</a></li>
-          <li><a href="./modificarEliminar.html">Modificar - Eliminar</a></li>
-          <li><a href="./ejerciciosSQL.html">Actividades</a></li>
-        </ul>
-        <li><a href="./foreignKey.html">Foreign Keys</a></li>
-        <li><a href="./transaccionesSQL.html">Transacciones SQL</a></li>
+        <li><a href="./ejercicios/ejercicios.html">BOOTCAMP FULLSTACK JAVA - SQL</a></li>
         <li><a href="./advanced_querys/avanzado.html">SQL Avanzado</a></li>
       </ul>
-      
-    </div></body></html>
-    <hr>
-  </div>
-</body>
+      <hr>
+    <html><head></head><body><div><h1 class="mume-header" id="instalar-mysql-ubuntu">Instalar Mysql Ubuntu</h1>
+
+<h2 class="mume-header" id="actualizar-los-repositorios">Actualizar los repositorios</h2>
+
+<pre class="language-text">sudo apt-get update
+</pre>
+<h2 class="mume-header" id="instalar-mysql-server">Instalar Mysql-server</h2>
+
+<pre class="language-text">sudo apt-get install mysql-server
+</pre>
+<h2 class="mume-header" id="verificar-version-instalada">Verificar version instalada</h2>
+
+<pre class="language-text">mysql --version
+</pre>
+<h2 class="mume-header" id="manual-de-mysql">Manual de Mysql</h2>
+
+<pre class="language-text">man mysql
+</pre>
+<h2 class="mume-header" id="acceder-a-mysql-desde-la-terminal">Acceder a Mysql desde la terminal</h2>
+
+<pre class="language-text">sudo su
+mysql -u root -p
+</pre>
+<h2 class="mume-header" id="mostrar-las-bases-de-datos">Mostrar las bases de datos</h2>
+
+<pre class="language-text">show databases;
+</pre>
+<h2 class="mume-header" id="crear-bd">Crear BD</h2>
+
+<pre class="language-text">create database tutoriales_db;
+</pre>
+<h2 class="mume-header" id="seleccionar-bd">Seleccionar BD</h2>
+
+<pre class="language-text">use [nombre_base_datos];
+</pre>
+<h2 class="mume-header" id="borrar-bd">Borrar BD</h2>
+
+<pre class="language-text">drop database [nombre_de_la_bd];
+</pre>
+<h2 class="mume-header" id="salir-de-mysql">Salir de Mysql</h2>
+
+<pre class="language-text">quit
+</pre>
+<h3 class="mume-header" id="instalar-mysql-workbench">Instalar Mysql Workbench</h3>
+
+<p>Agregar permiso de &quot;read, add, change, or remove saved password (TRUE)</p>
+<h2 class="mume-header" id="dar-permisos-al-usuario-root">Dar permisos al usuario root</h2>
+
+<pre class="language-text">mysql -u root -p
+[Ingresar la contrase&#xF1;a]
+
+ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;12345&apos;;
+&gt;&gt;&gt; Query OK, 0 rows affected (0,21 sec)
+</pre>
+<h2 class="mume-header" id="mostrar-el-hostname-y-puerto-de-mysql">Mostrar el hostname y puerto de Mysql</h2>
+
+<pre class="language-text">SHOW VARIABLES WHERE VARIABLE_NAME IN(&apos;hostname&apos;, &apos;port&apos;);
+</pre>
+</div></body></html>
+    </div>
+  </body>
 </html>
-
-
-  
