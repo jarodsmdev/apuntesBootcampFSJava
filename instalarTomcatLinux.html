@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Apuntes</title>
+    <title>no title</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -17,54 +17,104 @@
   </head>
   <body for="html-export">
     <div class="mume markdown-preview">
-    <html><head></head><body><div><h1 class="mume-header" id="-apuntes-mysql">Apuntes</h1>
-      <ul>
-        <li><a href="./index.html">Inicio</a></li>
-        <li><a href="./ejercicios/ejercicios.html">BOOTCAMP FULLSTACK - SQL</a></li>
-        <li><a href="./actividades/ejercicios.html">BOOTCAMP FULLSTACK - JAVA</a></li>
-        
-        <li><a href="https://apuntes-java.netlify.app/">CURSO JAVA</a></li>
-      </ul>
-      <hr>
-      <h2>Apuntes GIT</h2>
-      <ul>
-        <li><a href="./git_notes/index.html">Indice GIT</a></li>
-      </ul>
-      <hr>
-      <h2>Apuntes SQL</h2>
+    <html><head></head><body><div><h1 class="mume-header" id="tomcat-9">Tomcat 9</h1>
 
-      <h3>Instalacion Gestores BBDD</h3>
-      <ul>
-        <li><a href="./instalar_postgresql.html">PostgreSQL</a></li>
-        <li><a href="./mysqlUbuntu.html">MySQL</a></li>
-      </ul>
+<hr>
+<h2 class="mume-header" id="instalar-tomcat-9-linux">Instalar Tomcat 9 Linux</h2>
 
-      <h3>Tomcat 9</h3>
-      <ul>
-        <li><a href="./instalarTomcatLinux.html">Instalar y Configurar Tomcat 9</a></li>
-      </ul>
+<p><a href="https://tomcat.apache.org/download-90.cgi">Enlace de descarga Apache Tomcat 9</a></p>
+<p>Acceder a la carpeta donde est&#xE1; el archivo reci&#xE9;n descargado <code>apache-tomcat-9.0.73.tar.gz</code></p>
+<p>Abrir la terminal</p>
+<p>Descomprimir el archivo</p>
+<pre class="language-text">tar xvf apache-tomcat-9.0.73.tar.gz
+</pre>
+<p>Esto crear&#xE1; un directorio llamado <code>apache-tomcat-9.0.73</code>, por lo cual lo renombraremos a <code>tomcat</code></p>
+<pre class="language-text">mv apache-tomcat-9.0.73 tomcat
+&gt;&gt;renamed &apos;apache-tomcat-9.0.73&apos; -&gt; &apos;tomcat&apos;
+</pre>
+<p>Ingresar al directorio reci&#xE9;n renombrado</p>
+<pre class="language-text">cd tomcat
+ls -l
+cd
+nano .bashrc
+</pre>
+<p>Dentro del editor nano agregar lo siguiente: En donde el sufijo de $PATH es la ruta donde se encuentra la carpeta &quot;bin&quot; de tomcat</p>
+<pre class="language-text">export PATH=$PATH:/home/jarod/tomcat/tomcat/bin
+</pre>
+<h2 class="mume-header" id="configurando-catalina-opts">Configurando CATALINA OPTS</h2>
 
-      <h3>Ejemplos</h3>
-      <ul>
-        <li><a href="./consultasSQL.html">Consultas SQL</a></li>
-        <ul>
-          <li><a href="./funcionesAgregadas.html">Funciones Agregadas</a></li>
-          <li><a href="./group_by.html">Group by</a></li>
-          <li><a href="./having.html">Having</a></li>
-          <li><a href="./order_by.html">Order by</a></li>
-          <li><a href="./modificarEliminar.html">Modificar - Eliminar</a></li>
-          <li><a href="./ejerciciosSQL.html">Actividades</a></li>
-        </ul>
-        <li><a href="./foreignKey.html">Foreign Keys</a></li>
-        <li><a href="./transaccionesSQL.html">Transacciones SQL</a></li>
-        <li><a href="./advanced_querys/avanzado.html">SQL Avanzado</a></li>
-      </ul>
-      
-    </div></body></html>
-    <hr>
-  </div>
-</body>
+<p>Primero se debe deterne cualquier instancia de tomcat</p>
+<pre class="language-text">catalina.sh stop
+&gt;&gt;Using CATALINA_BASE:   /home/jarod/tomcat/tomcat
+&gt;&gt;Using CATALINA_HOME:   /home/jarod/tomcat/tomcat
+&gt;&gt;Using CATALINA_TMPDIR: /home/jarod/tomcat/tomcat/temp
+&gt;&gt;Using JRE_HOME:        /usr/lib/jvm/java-17-oracle
+&gt;&gt;Using CLASSPATH:       /home/jarod/tomcat/tomcat/bin/bootstrap.jar:/home/jarod/tomcat/tomcat/bin/tomcat-juli.jar
+&gt;&gt;Using CATALINA_OPTS:   
+&gt;&gt;NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+</pre>
+<h2 class="mume-header" id="cambiar-el-tama%C3%B1o-de-la-maquina-virtual-java">Cambiar el tama&#xF1;o de la maquina virtual java</h2>
+
+<pre class="language-text">export CATALINA_OPTS = &quot;-Xms256m -Xmx1g&quot;
+echo $CATALINA_OPTS
+&gt;-Xms256m -Xmx1g
+
+catalina.sh start
+Using CATALINA_BASE:   /home/jarod/tomcat/tomcat
+&gt;Using CATALINA_HOME:   /home/jarod/tomcat/tomcat
+&gt;Using CATALINA_TMPDIR: /home/jarod/tomcat/tomcat/temp
+&gt;Using JRE_HOME:        /usr/lib/jvm/java-17-oracle
+&gt;Using CLASSPATH:       /home/jarod/tomcat/tomcat/bin/bootstrap.jar:/home/jarod/tomcat/tomcat/bin/tomcat-juli.jar
+&gt;Using CATALINA_OPTS:   
+&gt;Tomcat started.
+
+ps -ef | grep java
+</pre>
+<h2 class="mume-header" id="arrancar-tomcat">Arrancar Tomcat</h2>
+
+<p>Saber la ruta donde est&#xE1; instalador la m&#xE1;quina virtual de Java en el equipo</p>
+<pre class="language-text">sudo update-alternatives --config java
+</pre>
+<p>Primero se debe tener configurado JAVA_HOME</p>
+<pre class="language-text">export JAVA_HOME = /usr/lib/jvm/java-18-openjdk-amd64/bin/java
+</pre>
+<p>Ingresar al directorio donde se encuentra instalado tomcat/bin y ejecutar <code>startup.sh</code></p>
+<pre class="language-text">startup.sh
+Using CATALINA_BASE:   /home/jarod/tomcat/tomcat
+&gt;Using CATALINA_HOME:   /home/jarod/tomcat/tomcat
+&gt;Using CATALINA_TMPDIR: /home/jarod/tomcat/tomcat/temp
+&gt;Using JRE_HOME:        /usr/lib/jvm/java-17-oracle
+&gt;Using CLASSPATH:       /home/jarod/tomcat/tomcat/bin/bootstrap.jar:/home/jarod/tomcat/tomcat/bin/tomcat-juli.jar
+&gt;Using CATALINA_OPTS:   
+&gt;Tomcat started.
+
+ps -ef | grep java
+</pre>
+<p>Ir a un navagador e ingresar a la direccion:</p>
+<pre class="language-text">localhost:8080/
+</pre>
+<h2 class="mume-header" id="a%C3%B1adir-un-usuario-a-tomcat">A&#xF1;adir un usuario a tomcat</h2>
+
+<p>Ingresar al directorio tomcat/conf y editar el archivo &quot;<strong>tomcat-user.xml</strong>&quot; y agregar las siguientes lineas</p>
+<pre class="language-text">&lt;role rolename=&quot;manager-gui&quot;/&gt;
+&lt;user username=&quot;admin&quot; password=&quot;12345&quot; roles=&quot;manager-gui&quot;/&gt;
+</pre>
+<blockquote>
+<p>Puedes cambiar el usuario y la contrase&#xF1;a si lo deseas.</p>
+</blockquote>
+<h2 class="mume-header" id="detener-ejecuci%C3%B3n-de-tomcat">Detener ejecuci&#xF3;n de Tomcat</h2>
+
+<p>Debes estar en el directorio &quot;tomcat/conf&quot; y ejecutar el fichero <code>shutdown.sh</code></p>
+<pre class="language-text">shutdown.sh
+&gt;Using CATALINA_BASE:   /home/jarod/tomcat/tomcat
+Using CATALINA_HOME:   /home/jarod/tomcat/tomcat
+Using CATALINA_TMPDIR: /home/jarod/tomcat/tomcat/temp
+Using JRE_HOME:        /usr/lib/jvm/java-17-oracle
+Using CLASSPATH:       /home/jarod/tomcat/tomcat/bin/bootstrap.jar:/home/jarod/tomcat/tomcat/bin/tomcat-juli.jar
+Using CATALINA_OPTS:   
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+</pre>
+</div></body></html>
+    </div>
+  </body>
 </html>
-
-
-  
