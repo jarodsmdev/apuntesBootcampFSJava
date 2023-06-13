@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Docker</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}pre{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;padding:1em;margin:.5em 0;overflow:auto;line-height:1.5;tab-size:4;hyphens:none;color:#c5c8c6;background-color:#27292c !important;border:#43484c;border-radius:3px}pre[class*="language-"]{padding:1em}code[class*="language-"] .token.comment,pre[class*="language-"] .token.comment,code[class*="language-"] .token.prolog,pre[class*="language-"] .token.prolog,code[class*="language-"] .token.doctype,pre[class*="language-"] .token.doctype,code[class*="language-"] .token.cdata,pre[class*="language-"] .token.cdata{color:#7C7C7C}code[class*="language-"] .token.punctuation,pre[class*="language-"] .token.punctuation{color:#96CBFE}code[class*="language-"] .namespace,pre[class*="language-"] .namespace{opacity:.7}code[class*="language-"] .token.constant,pre[class*="language-"] .token.constant{color:#99CC99}code[class*="language-"] .token.boolean,pre[class*="language-"] .token.boolean,code[class*="language-"] .token.number,pre[class*="language-"] .token.number,code[class*="language-"] .token.function-name,pre[class*="language-"] .token.function-name{color:#FF73FD}code[class*="language-"] .token.tag,pre[class*="language-"] .token.tag{color:#96CBFE}code[class*="language-"] .token.selector,pre[class*="language-"] .token.selector{color:#96CBFE}code[class*="language-"] .token.attr-name,pre[class*="language-"] .token.attr-name{color:#C6C5FE}code[class*="language-"] .token.string,pre[class*="language-"] .token.string{color:#A8FF60}code[class*="language-"] .token.char,pre[class*="language-"] .token.char{color:#FF8000}code[class*="language-"] .token.entity,pre[class*="language-"] .token.entity{color:#FFD2A7}code[class*="language-"] .token.url,pre[class*="language-"] .token.url{color:#7C7C7C}code[class*="language-"] .token.operator,pre[class*="language-"] .token.operator{color:#EDEDED}code[class*="language-"] .token.atrule,pre[class*="language-"] .token.atrule,code[class*="language-"] .token.attr-value,pre[class*="language-"] .token.attr-value,code[class*="language-"] .token.keyword,pre[class*="language-"] .token.keyword{color:#CFCB90}code[class*="language-"] .token.function,pre[class*="language-"] .token.function{color:#FFD2A7}code[class*="language-"] .token.class-name,pre[class*="language-"] .token.class-name{color:#FFD2A7}code[class*="language-"] .token.variable,pre[class*="language-"] .token.variable{color:#C6C5FE}code[class*="language-"] .token.regex,pre[class*="language-"] .token.regex,code[class*="language-"] .token.important,pre[class*="language-"] .token.important{color:#E9C062}code[class*="language-"] .token.important,pre[class*="language-"] .token.important,code[class*="language-"] .token.bold,pre[class*="language-"] .token.bold{font-weight:bold}code[class*="language-"] .token.italic,pre[class*="language-"] .token.italic{font-style:italic}code[class*="language-"] .token.entity,pre[class*="language-"] .token.entity{cursor:help}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:rgba(153,122,102,0.08);background:linear-gradient(to right, rgba(153,122,102,0.1) 70%, rgba(153,122,102,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:rgba(153,122,102,0.4);color:#f5f2f0;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px white}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}.emoji {
+  height: 0.8em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#c5c8c6;background-color:#1d1f21;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#fff}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#9ba09d}html body strong{color:#fff}html body del{color:#9ba09d}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#ddd;text-decoration:none}html body a:hover{color:#cecece;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#9ba09d;background-color:#303337;border-left:4px solid #43484c}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#43484c;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#fff}html body table td,html body table th{border:1px solid #43484c;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#fff;background-color:#303337;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#43484c;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#fff;border:1px solid #43484c;border-bottom:2px solid #35393c;padding:2px 4px;background-color:#303337;border-radius:3px}@media print{html body{background-color:#1d1f21}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#fff;page-break-after:avoid}html body blockquote{color:#9ba09d}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}html body a{text-decoration:underline}
+    /* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+    </style>
+    
+  </head>
+  <body for="html-export">
+    <div class="mume markdown-preview">
+    <html><head></head><body><div><h1 class="mume-header" id="docker-apache-httpd" ebook-toc-level-1 heading="Docker Apache httpd">Docker Apache httpd</h1>
+
+<hr>
+<h2 class="mume-header" id="listar-im%C3%A1genes-de-docker" ebook-toc-level-2 heading="Listar im&amp;#xE1;genes de Docker">Listar im&#xE1;genes de Docker</h2>
+
+<pre class="language-text">&#x276F; docker images
+
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+</pre>
+<h2 class="mume-header" id="ejecutar-un-servidor-web-apache-con-docker" ebook-toc-level-2 heading="Ejecutar un servidor web Apache con Docker">Ejecutar un servidor web Apache con Docker</h2>
+
+<pre class="language-text">&#x276F; docker run -dit --name myApache -p 8080:80 httpd
+
+Unable to find image &apos;httpd:latest&apos; locally
+latest: Pulling from library/httpd
+f03b40093957: Pull complete 
+abaf8619eb1c: Pull complete 
+e3fe37d0c2ad: Pull complete 
+52a1e37affe5: Pull complete 
+49d8a68fd903: Pull complete 
+Digest: sha256:1bb3f7669a85713906e695599d29c58ab40d4e6409907946609d92a428e95b49
+Status: Downloaded newer image for httpd:latest
+fb489e16b2c8a9b70b0f2cdf8d51b1ed0b573abad6d6beb454783eb9182fb080
+</pre>
+<p>El comando <code>docker run -dit --name myApache -p 8080:80</code> httpd se utiliza para ejecutar un contenedor de Docker basado en la imagen &quot;httpd&quot;, que es el servidor web Apache HTTP Server.</p>
+<p>A continuaci&#xF3;n se explica brevemente cada parte del comando:</p>
+<p><code>docker run</code>: Es el comando principal de Docker utilizado para ejecutar un contenedor a partir de una imagen.<br>
+<code>-dit</code>: Son opciones o flags que se utilizan con el comando docker run:<br>
+<code>-d</code> indica que el contenedor se ejecutar&#xE1; en segundo plano (en modo daemon).<br>
+<code>-i</code> permite la interactividad al mantener abierto el canal de entrada est&#xE1;ndar (stdin) del contenedor.<br>
+<code>-t</code> asigna un seudoterminal o pseudoTTY al contenedor.<br>
+<code>--name myApache</code>: Establece el nombre del contenedor como &quot;myApache&quot;. Puedes elegir cualquier nombre que desees.<br>
+<code>-p 8080:80</code>: Mapea el puerto 8080 del host (el sistema operativo anfitri&#xF3;n en el que se est&#xE1; ejecutando Docker) al puerto 80 del contenedor. Esto permite acceder al servidor web Apache dentro del contenedor a trav&#xE9;s del puerto 8080 en el host.<br>
+<code>httpd</code>: Es el nombre de la imagen utilizada para crear el contenedor. En este caso, &quot;httpd&quot; es la imagen oficial de Apache HTTP Server.</p>
+<p>En resumen, el comando se encarga de ejecutar un contenedor de Apache HTTP Server en segundo plano, asign&#xE1;ndole un nombre, mapeando el puerto 8080 del host al puerto 80 del contenedor y utilizando la imagen &quot;httpd&quot;. Esto te permitir&#xE1; acceder al servidor web Apache ejecut&#xE1;ndose dentro del contenedor a trav&#xE9;s del puerto 8080 de tu sistema.</p>
+<h2 class="mume-header" id="ver-contenedores-en-ejecuci%C3%B3n" ebook-toc-level-2 heading="Ver contenedores en ejecuci&amp;#xF3;n">Ver contenedores en ejecuci&#xF3;n</h2>
+
+<pre class="language-text">&#x276F; docker ps
+
+CONTAINER ID   IMAGE     COMMAND              CREATED         STATUS         PORTS                                   NAMES
+fb489e16b2c8   httpd     &quot;httpd-foreground&quot;   8 minutes ago   Up 8 minutes   0.0.0.0:8080-&gt;80/tcp, :::8080-&gt;80/tcp   myApache
+</pre>
+<h2 class="mume-header" id="acceder-a-la-terminal-de-un-contenedor-docker-en-ejecuci%C3%B3n" ebook-toc-level-2 heading="Acceder a la terminal de un contenedor Docker en ejecuci&amp;#xF3;n">Acceder a la terminal de un contenedor Docker en ejecuci&#xF3;n</h2>
+
+<pre class="language-text">&#x276F; docker exec -it myApache bash
+
+&#x276F; root@fb489e16b2c8:/usr/local/apache2# 
+</pre>
+<p>El comando <code>docker exec -it myApache bash</code> se utiliza para acceder a una terminal interactiva dentro de un contenedor de Docker en ejecuci&#xF3;n. Aqu&#xED; hay una breve explicaci&#xF3;n de cada parte del comando:</p>
+<ul>
+<li><code>docker exec</code>: Es el comando de Docker utilizado para ejecutar comandos dentro de un contenedor en ejecuci&#xF3;n.</li>
+<li><code>-it</code>: Son opciones o flags que se utilizan con el comando <code>docker exec</code>:
+<ul>
+<li><code>-i</code> permite la interactividad al mantener abierto el canal de entrada est&#xE1;ndar (stdin) del contenedor.</li>
+<li><code>-t</code> asigna un seudoterminal o pseudoTTY al contenedor, lo que permite la interacci&#xF3;n con la terminal.</li>
+</ul>
+</li>
+<li><code>myApache</code>: Es el nombre o el ID del contenedor al que deseas acceder. Aseg&#xFA;rate de reemplazar &quot;myApache&quot; con el nombre o el ID correcto de tu contenedor.</li>
+<li><code>bash</code>: Es el comando que se ejecutar&#xE1; dentro del contenedor. En este caso, se utiliza &quot;bash&quot; para iniciar una sesi&#xF3;n de terminal dentro del contenedor. Dependiendo de la imagen del contenedor, tambi&#xE9;n se puede utilizar otro int&#xE9;rprete de comandos, como &quot;sh&quot; o &quot;zsh&quot;.</li>
+</ul>
+<h2 class="mume-header" id="ubicaci%C3%B3n-de-los-archivos-para-el-renderizado-en-un-contenedor-de-apache-http-server-httpd" ebook-toc-level-2 heading="Ubicaci&amp;#xF3;n de los archivos para el renderizado en un contenedor de Apache HTTP Server (httpd)">Ubicaci&#xF3;n de los archivos para el renderizado en un contenedor de Apache HTTP Server (httpd)</h2>
+
+<p>Al ejecutar el comando <code>docker exec -it myApache bash</code>, se abrir&#xE1; una terminal interactiva en el contenedor &quot;myApache&quot; y podr&#xE1;s interactuar con &#xE9;l como si estuvieras en una terminal normal. Esto te permitir&#xE1; ejecutar comandos dentro del contenedor y realizar tareas dentro del entorno del contenedor.</p>
+<p>Cuando ejecutas un contenedor basado en la imagen de Apache HTTP Server (httpd), por defecto los archivos para el renderizado de la p&#xE1;gina web se encuentran dentro del contenedor en el directorio <code>/usr/local/apache2/htdocs</code>.</p>
+<p>Dentro de ese directorio, puedes colocar tus archivos HTML, CSS, JavaScript y cualquier otro recurso est&#xE1;tico que desees servir a trav&#xE9;s del servidor web. Por ejemplo, si tienes un archivo HTML llamado <code>index.html</code> que deseas mostrar al visitar <code>localhost:8080</code>, debes colocar ese archivo dentro del directorio <code>/usr/local/apache2/htdocs</code> del contenedor.</p>
+<pre class="language-text">&#x276F; root@fb489e16b2c8:/usr/local/apache2# ls
+bin  build  cgi-bin  conf  error  htdocs  icons  include  logs  modules
+
+&#x276F; root@fb489e16b2c8:/usr/local/apache2# cd htdocs/
+&#x276F; root@fb489e16b2c8:/usr/local/apache2/htdocs# ls
+index.html
+
+&#x276F; echo &apos;&lt;h1&gt;About&lt;/h1&gt;&apos; &gt; about.html
+&#x276F; root@fb489e16b2c8:/usr/local/apache2/htdocs# ls
+about.html  index.html
+</pre>
+<h2 class="mume-header" id="ejecutar-un-servidor-web-apache-en-docker-con-montaje-de-archivos" ebook-toc-level-2 heading="Ejecutar un servidor web Apache en Docker con montaje de archivos">Ejecutar un servidor web Apache en Docker con montaje de archivos</h2>
+
+<p>El comando <code>sudo docker run --name myWeb -dit -p 3000:80 -v &quot;$PWD&quot;:/usr/local/apache2/htdocs/ httpd</code> se utiliza para ejecutar un contenedor de Docker basado en la imagen &quot;httpd&quot; de Apache HTTP Server. Aqu&#xED; hay una explicaci&#xF3;n de cada parte del comando:</p>
+<ul>
+<li><code>sudo</code>: Es un prefijo utilizado en sistemas Linux para ejecutar el comando con privilegios de superusuario (root), en caso de ser necesario.</li>
+<li><code>docker run</code>: Es el comando principal de Docker utilizado para ejecutar un contenedor a partir de una imagen.</li>
+<li><code>--name myWeb</code>: Establece el nombre del contenedor como &quot;myWeb&quot;. Puedes elegir cualquier nombre que desees.</li>
+<li><code>-dit</code>: Son opciones o flags que se utilizan con el comando <code>docker run</code>:
+<ul>
+<li><code>-d</code> indica que el contenedor se ejecutar&#xE1; en segundo plano (en modo daemon).</li>
+<li><code>-i</code> permite la interactividad al mantener abierto el canal de entrada est&#xE1;ndar (stdin) del contenedor.</li>
+<li><code>-t</code> asigna un seudoterminal o pseudoTTY al contenedor.</li>
+</ul>
+</li>
+<li><code>-p 3000:80</code>: Mapea el puerto 3000 del host (el sistema operativo anfitri&#xF3;n en el que se est&#xE1; ejecutando Docker) al puerto 80 del contenedor. Esto permite acceder al servidor web Apache dentro del contenedor a trav&#xE9;s del puerto 3000 en el host.</li>
+<li><code>-v &quot;$PWD&quot;:/usr/local/apache2/htdocs/</code>: Monta el directorio actual (donde se ejecuta el comando) en el directorio <code>/usr/local/apache2/htdocs/</code> dentro del contenedor. Esto permite que los archivos del directorio actual est&#xE9;n disponibles dentro del contenedor para el renderizado del servidor web.</li>
+<li><code>httpd</code>: Es el nombre de la imagen utilizada para crear el contenedor. En este caso, &quot;httpd&quot; es la imagen oficial de Apache HTTP Server.</li>
+</ul>
+<h2 class="mume-header" id="ver-contenedores-en-ejecuci%C3%B3n-1" ebook-toc-level-2 heading="Ver contenedores en ejecuci&amp;#xF3;n">Ver contenedores en ejecuci&#xF3;n</h2>
+
+<pre class="language-text">&#x276F; sudo docker ps
+
+CONTAINER ID   IMAGE     COMMAND              CREATED          STATUS          PORTS                                   NAMES
+9a757f2e8915   httpd     &quot;httpd-foreground&quot;   2 minutes ago    Up 2 minutes    0.0.0.0:3000-&gt;80/tcp, :::3000-&gt;80/tcp   myWeb
+fb489e16b2c8   httpd     &quot;httpd-foreground&quot;   40 minutes ago   Up 40 minutes   0.0.0.0:8080-&gt;80/tcp, :::8080-&gt;80/tcp   myApache
+</pre>
+<h2 class="mume-header" id="detener-todos-los-contenedores-en-docker" ebook-toc-level-2 heading="Detener todos los contenedores en Docker">Detener todos los contenedores en Docker</h2>
+
+<p>El comando <code>docker stop $(docker ps -aq)</code> se utiliza para detener todos los contenedores en ejecuci&#xF3;n en Docker. Aqu&#xED; est&#xE1; una explicaci&#xF3;n de cada parte del comando:</p>
+<ul>
+<li><code>docker ps</code>: Muestra informaci&#xF3;n sobre los contenedores en ejecuci&#xF3;n.</li>
+<li><code>-a</code>: Muestra todos los contenedores, incluidos los que est&#xE1;n detenidos.</li>
+<li><code>-q</code>: Solo muestra las IDs de los contenedores.</li>
+</ul>
+<p>El comando <code>docker ps -aq</code> se utiliza para obtener una lista de las IDs de todos los contenedores, ya sean contenedores en ejecuci&#xF3;n o detenidos.</p>
+<p>La construcci&#xF3;n <code>$(docker ps -aq)</code> se conoce como &quot;command substitution&quot; (sustituci&#xF3;n de comandos). B&#xE1;sicamente, esto toma el resultado de <code>docker ps -aq</code> (las IDs de los contenedores) y lo pasa como argumento al comando <code>docker stop</code>.</p>
+<p>Por lo tanto, <code>docker stop $(docker ps -aq)</code> ejecutar&#xE1; el comando <code>docker stop</code> con las IDs de todos los contenedores, lo que resultar&#xE1; en detener todos los contenedores en ejecuci&#xF3;n.</p>
+<h2 class="mume-header" id="detener-un-contenedor-en-docker" ebook-toc-level-2 heading="Detener un contenedor en Docker">Detener un contenedor en Docker</h2>
+
+<p><code>docker stop &lt;nombreContenedor&gt;</code> o bien <code>docker stop &lt;idContenedor&gt;</code></p>
+<pre class="language-text">&#x276F; docker stop myWeb
+myWeb
+
+&#x276F; docker stop myApache
+myApache
+
+&#x276F; sudo docker ps
+
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+</pre>
+<h2 class="mume-header" id="listar-todos-los-contenedores-disponibles" ebook-toc-level-2 heading="Listar todos los contenedores disponibles">Listar todos los contenedores disponibles</h2>
+
+<pre class="language-text">&#x276F; docker ps -a
+
+CONTAINER ID   IMAGE     COMMAND              CREATED          STATUS                     PORTS     NAMES
+9a757f2e8915   httpd     &quot;httpd-foreground&quot;   18 minutes ago   Exited (0) 6 minutes ago             myWeb
+fb489e16b2c8   httpd     &quot;httpd-foreground&quot;   56 minutes ago   Exited (0) 6 minutes ago             myApache
+</pre>
+<p>El comando <code>docker ps -a</code> se utiliza para listar todos los contenedores en Docker, incluyendo aquellos que est&#xE1;n detenidos. Aqu&#xED; tienes una explicaci&#xF3;n de cada parte del comando:</p>
+<ul>
+<li><code>docker ps</code>: Es el comando principal de Docker utilizado para listar los contenedores en ejecuci&#xF3;n.</li>
+<li><code>-a</code>: Es una opci&#xF3;n que se utiliza con el comando <code>docker ps</code> para incluir todos los contenedores, tanto los que est&#xE1;n en ejecuci&#xF3;n como los que est&#xE1;n detenidos.</li>
+</ul>
+<p>Cuando ejecutas <code>docker ps -a</code>, se mostrar&#xE1; una lista de todos los contenedores en Docker junto con su informaci&#xF3;n relevante, como el nombre o el ID del contenedor, la imagen utilizada, el estado (en ejecuci&#xF3;n o detenido), los puertos expuestos y la fecha de creaci&#xF3;n, entre otros detalles.</p>
+<p>Este comando es &#xFA;til para obtener una visi&#xF3;n general de todos los contenedores presentes en tu entorno Docker, independientemente de su estado. Puedes utilizar esta informaci&#xF3;n para administrar y realizar acciones espec&#xED;ficas en los contenedores, como iniciar, detener o eliminarlos.</p>
+<h2 class="mume-header" id="eliminar-todos-los-contenedores-en-docker" ebook-toc-level-2 heading="Eliminar todos los contenedores en Docker">Eliminar todos los contenedores en Docker</h2>
+
+<p>El comando <code>docker rm $(docker ps -aq)</code> se utiliza para eliminar todos los contenedores en Docker, tanto los que est&#xE1;n en ejecuci&#xF3;n como los que est&#xE1;n detenidos. Aqu&#xED; tienes una explicaci&#xF3;n de cada parte del comando:</p>
+<ul>
+<li><code>docker ps</code>: Muestra informaci&#xF3;n sobre los contenedores en ejecuci&#xF3;n.</li>
+<li><code>-a</code>: Muestra todos los contenedores, incluidos los que est&#xE1;n detenidos.</li>
+<li><code>-q</code>: Solo muestra las IDs de los contenedores.</li>
+</ul>
+<p>El comando <code>docker ps -aq</code> se utiliza para obtener una lista de las IDs de todos los contenedores, ya sean contenedores en ejecuci&#xF3;n o detenidos.</p>
+<p>La construcci&#xF3;n <code>$(docker ps -aq)</code> se conoce como &quot;command substitution&quot; (sustituci&#xF3;n de comandos). B&#xE1;sicamente, esto toma el resultado de <code>docker ps -aq</code> (las IDs de los contenedores) y lo pasa como argumento al comando <code>docker rm</code>.</p>
+<p>Por lo tanto, <code>docker rm $(docker ps -aq)</code> ejecutar&#xE1; el comando <code>docker rm</code> con las IDs de todos los contenedores, lo que resultar&#xE1; en la eliminaci&#xF3;n de todos los contenedores en Docker.</p>
+<p>Es importante tener en cuenta que esta acci&#xF3;n eliminar&#xE1; permanentemente los contenedores y toda la informaci&#xF3;n asociada a ellos. Aseg&#xFA;rate de tener una copia de seguridad de cualquier dato importante antes de ejecutar este comando.</p>
+<h2 class="mume-header" id="eliminar-un-contenedor-docker" ebook-toc-level-2 heading="Eliminar un contenedor Docker">Eliminar un contenedor Docker</h2>
+
+<p><code>docker rm &lt;nombreContenedor&gt;</code> o bien <code>docker rm &lt;idContenedor&gt;</code></p>
+<pre class="language-text">&#x276F; docker ps -a
+CONTAINER ID   IMAGE     COMMAND              CREATED             STATUS                      PORTS     NAMES
+9a757f2e8915   httpd     &quot;httpd-foreground&quot;   24 minutes ago      Exited (0) 12 minutes ago             myWeb
+fb489e16b2c8   httpd     &quot;httpd-foreground&quot;   About an hour ago   Exited (0) 12 minutes ago             myApache
+
+&#x276F; docker rm myWeb
+myWeb
+
+&#x276F; docker ps -a
+CONTAINER ID   IMAGE     COMMAND              CREATED             STATUS                      PORTS     NAMES
+fb489e16b2c8   httpd     &quot;httpd-foreground&quot;   About an hour ago   Exited (0) 13 minutes ago             myApache
+
+&#x276F; docker rm fb489e16
+fb489e16
+
+&#x276F; docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+&#x276F; docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+httpd        latest    d1676199e605   2 weeks ago   145MB
+</pre>
+<h2 class="mume-header" id="construir-una-imagen-de-docker-con-apache-y-un-sitio-web-personalizado" ebook-toc-level-2 heading="Construir una imagen de Docker con Apache y un sitio web personalizado">Construir una imagen de Docker con Apache y un sitio web personalizado</h2>
+
+<ol>
+<li>Debes crear un sitio web con archivo index, css, javascript, etc</li>
+<li>Crear archivo docker <code>Dockerfile</code> e ingresar estos comandos en su interior</li>
+</ol>
+<pre data-role="codeBlock" data-info class="language-"><code>    FROM httpd
+    COPY ./public_html /usr/local/apache2/htdocs/
+</code></pre><ol start="3">
+<li>La estructura quedar&#xED;a algo as&#xED;:</li>
+</ol>
+<pre data-role="codeBlock" data-info class="language-"><code>    WebPage/
+    &#x251C;&#x2500;&#x2500; public_html/
+    &#x2502;   &#x251C;&#x2500;&#x2500; index.html
+    &#x2502;   &#x251C;&#x2500;&#x2500; css/
+    &#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; style.css
+    &#x2502;   &#x251C;&#x2500;&#x2500; js/
+    &#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; script.js
+    &#x2502;   &#x251C;&#x2500;&#x2500; images/
+    &#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; image1.jpg
+    &#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; image2.png
+    &#x251C;&#x2500;&#x2500; Dockerfile
+
+</code></pre><ol start="4">
+<li>Ejecuta el siguiente comando</li>
+</ol>
+<pre data-role="codeBlock" data-info class="language-"><code>    &#x276F; docker build -t docker-apache .
+    [+] Building 4.8s (7/7) FINISHED                                                                                                                                                                                                     
+    =&gt; [internal] load build definition from Dockerfile                                                                                                                                                                            0.9s
+    =&gt; =&gt; transferring dockerfile: 93B                                                                                                                                                                                             0.1s
+    =&gt; [internal] load .dockerignore                                                                                                                                                                                               0.7s
+    =&gt; =&gt; transferring context: 2B                                                                                                                                                                                                 0.1s
+    =&gt; [internal] load metadata for docker.io/library/httpd:latest                                                                                                                                                                 0.0s
+    =&gt; [1/2] FROM docker.io/library/httpd                                                                                                                                                                                          2.1s
+    =&gt; [internal] load build context                                                                                                                                                                                               1.5s
+    =&gt; =&gt; transferring context: 3.90MB                                                                                                                                                                                             0.4s
+    =&gt; [2/2] COPY ./public_html /usr/local/apache2/htdocs/                                                                                                                                                                         0.7s
+    =&gt; exporting to image                                                                                                                                                                                                          0.7s
+    =&gt; =&gt; exporting layers                                                                                                                                                                                                         0.6s
+    =&gt; =&gt; writing image sha256:7989a21313b23b35674bda57adb266f13ce601eb059d01a84dfe61c9af34d1ac                                                                                                                                    0.0s
+    =&gt; =&gt; naming to docker.io/library/docker-apache
+</code></pre><p>El comando <code>build -t docker-apache .</code> se utiliza para construir una imagen de Docker a partir de un Dockerfile y asignarle un nombre o etiqueta. Aqu&#xED; tienes una explicaci&#xF3;n de cada parte del comando:</p>
+<ul>
+<li><code>docker build</code>: Es el comando utilizado para construir una imagen de Docker.</li>
+<li><code>-t</code>: Es una opci&#xF3;n que se utiliza para asignarle un nombre o etiqueta a la imagen.</li>
+<li><code>docker-apache</code>: Es el nombre o etiqueta que le asignamos a la imagen. Puedes elegir el nombre que desees, siempre y cuando sigas las convenciones de nombres de Docker.</li>
+<li><code>.</code>: Es el contexto de construcci&#xF3;n. Aqu&#xED; especificamos que el Dockerfile y cualquier archivo necesario se encuentran en el directorio actual.</li>
+</ul>
+<p>En cuanto al contenido del Dockerfile, <code>FROM httpd</code> indica que estamos utilizando la imagen base de Apache HTTP Server como punto de partida para construir nuestra imagen personalizada. <code>COPY ./public_html /usr/local/apache2/htdocs/</code> copia el contenido del directorio <code>public_html</code> local al directorio <code>/usr/local/apache2/htdocs/</code> dentro del contenedor.</p>
+<h2 class="mume-header" id="listar-im%C3%A1genes-docker" ebook-toc-level-2 heading="Listar im&amp;#xE1;genes Docker">Listar im&#xE1;genes Docker</h2>
+
+<pre class="language-text">&#x276F; docker images
+REPOSITORY      TAG       IMAGE ID       CREATED          SIZE
+docker-apache   latest    7989a21313b2   10 minutes ago   149MB
+httpd           latest    d1676199e605   2 weeks ago      145MB
+</pre>
+<h2 class="mume-header" id="ejecutar-imagen-docker-reci%C3%A9n-creada" ebook-toc-level-2 heading="Ejecutar imagen docker reci&amp;#xE9;n creada">Ejecutar imagen docker reci&#xE9;n creada</h2>
+
+<pre class="language-text">&#x276F; sudo docker run -p 4000:80 --name myWebApache -d docker-apache
+dc0752cefaca4fc4e88a10feaff5c156b688b2f2e9f1246de00293e9594bb80e
+
+&#x276F; sudo docker ps
+CONTAINER ID   IMAGE           COMMAND              CREATED          STATUS          PORTS                                   NAMES
+dc0752cefaca   docker-apache   &quot;httpd-foreground&quot;   24 seconds ago   Up 22 seconds   0.0.0.0:4000-&gt;80/tcp, :::4000-&gt;80/tcp   myWebApache
+</pre>
+<h2 class="mume-header" id="eliminar-una-imagen-de-docker" ebook-toc-level-2 heading="Eliminar una imagen de docker">Eliminar una imagen de docker</h2>
+
+<p><code>docker rmi &lt;nombreImagen&gt;</code> o bien <code>docker rmi &lt;idImagen&gt;</code></p>
+<pre class="language-text">&#x276F; sudo docker images
+REPOSITORY      TAG       IMAGE ID       CREATED          SIZE
+docker-apache   latest    7989a21313b2   16 minutes ago   149MB
+httpd           latest    d1676199e605   2 weeks ago      145MB
+
+&#x276F; sudo docker rmi docker-apache
+Untagged: docker-apache:latest
+Deleted: sha256:7989a21313b23b35674bda57adb266f13ce601eb059d01a84dfe61c9af34d1ac
+
+&#x276F; sudo docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+httpd        latest    d1676199e605   2 weeks ago   145MB
+
+&#x276F; sudo docker rmi d1676199e605
+Untagged: httpd:latest
+Untagged: httpd@sha256:1bb3f7669a85713906e695599d29c58ab40d4e6409907946609d92a428e95b49
+Deleted: sha256:d1676199e60591c70e38ddfde2c6c3fc51452fafeeeab485f6713d715dacee3a
+
+&#x276F; sudo docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+</pre>
+</div></body></html>
+    </div>
+  </body>
+</html>
