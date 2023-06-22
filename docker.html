@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Docker</title>
+    <title>no title</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -17,7 +17,7 @@
   </head>
   <body for="html-export">
     <div class="mume markdown-preview">
-    <html><head></head><body><div><h1 class="mume-header" id="docker-apache-httpd" ebook-toc-level-1 heading="Docker Apache httpd">Docker Apache httpd</h1>
+    <html><head></head><body><div><h1 class="mume-header" id="docker" ebook-toc-level-1 heading="Docker">Docker</h1>
 
 <hr>
 <h2 class="mume-header" id="listar-im%C3%A1genes-de-docker" ebook-toc-level-2 heading="Listar im&amp;#xE1;genes de Docker">Listar im&#xE1;genes de Docker</h2>
@@ -132,6 +132,8 @@ fb489e16b2c8   httpd     &quot;httpd-foreground&quot;   40 minutes ago   Up 40 m
 <p>Por lo tanto, <code>docker stop $(docker ps -aq)</code> ejecutar&#xE1; el comando <code>docker stop</code> con las IDs de todos los contenedores, lo que resultar&#xE1; en detener todos los contenedores en ejecuci&#xF3;n.</p>
 <h2 class="mume-header" id="detener-un-contenedor-en-docker" ebook-toc-level-2 heading="Detener un contenedor en Docker">Detener un contenedor en Docker</h2>
 
+<h3 class="mume-header" id="comando-docker-stop" ebook-toc-level-3 heading="Comando &lt;code&gt;docker stop&lt;/code&gt;">Comando <code>docker stop</code></h3>
+
 <p><code>docker stop &lt;nombreContenedor&gt;</code> o bien <code>docker stop &lt;idContenedor&gt;</code></p>
 <pre class="language-text">&#x276F; docker stop myWeb
 myWeb
@@ -143,6 +145,12 @@ myApache
 
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 </pre>
+<h2 class="mume-header" id="comando-docker-kill" ebook-toc-level-2 heading="Comando &lt;code&gt;docker kill&lt;/code&gt;">Comando <code>docker kill</code></h2>
+
+<p>El comando docker kill se utiliza para detener abruptamente un contenedor espec&#xED;fico en Docker. Puedes detener un contenedor utilizando el nombre o la ID del contenedor.</p>
+<p><code>docker kill &lt;nombreContenedor&gt;</code> o bien <code>docker kill &lt;idContenedor&gt;</code></p>
+<p>Al utilizar docker kill, se enviar&#xE1; una se&#xF1;al de finalizaci&#xF3;n inmediata (SIGKILL) al proceso en ejecuci&#xF3;n dentro del contenedor, lo que resultar&#xE1; en la terminaci&#xF3;n inmediata del contenedor sin realizar una salida limpia.</p>
+<p>Es importante tener en cuenta que al utilizar docker kill, cualquier dato o cambio no guardado dentro del contenedor se perder&#xE1;, ya que no se permite tiempo para una salida ordenada.</p>
 <h2 class="mume-header" id="listar-todos-los-contenedores-disponibles" ebook-toc-level-2 heading="Listar todos los contenedores disponibles">Listar todos los contenedores disponibles</h2>
 
 <pre class="language-text">&#x276F; docker ps -a
@@ -284,6 +292,100 @@ Deleted: sha256:d1676199e60591c70e38ddfde2c6c3fc51452fafeeeab485f6713d715dacee3a
 &#x276F; sudo docker images
 REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
 </pre>
+<h2 class="mume-header" id="limpieza-de-recursos" ebook-toc-level-2 heading="Limpieza de recursos">Limpieza de recursos</h2>
+
+<p><code>docker system prune</code> o bien <code>docker system prune --all</code> o bien <code>docker system prune -a</code></p>
+<p>El comando <code>docker system prune</code> se utiliza para limpiar recursos no utilizados en Docker, lo que ayuda a liberar espacio en disco y mantener el sistema m&#xE1;s ordenado. Al ejecutar este comando, Docker eliminar&#xE1; los siguientes elementos:</p>
+<ol>
+<li>
+<p>Contenedores detenidos: Se eliminar&#xE1;n todos los contenedores que est&#xE9;n en estado detenido (stopped).</p>
+</li>
+<li>
+<p>Redes no utilizadas: Se eliminar&#xE1;n las redes que no est&#xE9;n conectadas a ning&#xFA;n contenedor en ejecuci&#xF3;n.</p>
+</li>
+<li>
+<p>Vol&#xFA;menes sin uso: Se eliminar&#xE1;n los vol&#xFA;menes que no est&#xE9;n siendo utilizados por ning&#xFA;n contenedor.</p>
+</li>
+<li>
+<p>Im&#xE1;genes sin uso: Se eliminar&#xE1;n las im&#xE1;genes que no est&#xE9;n asociadas a ning&#xFA;n contenedor en ejecuci&#xF3;n y que no sean im&#xE1;genes base de otras im&#xE1;genes.</p>
+</li>
+<li>
+<p>Construcciones de Docker en cach&#xE9;: Se eliminar&#xE1;n los archivos de construcci&#xF3;n en cach&#xE9; que no se est&#xE9;n utilizando actualmente.</p>
+</li>
+</ol>
+<p>Es importante tener en cuenta que <code>docker system prune</code> eliminar&#xE1; permanentemente estos recursos, por lo que debes tener cuidado al usar este comando. Se te pedir&#xE1; una confirmaci&#xF3;n antes de que se lleve a cabo la limpieza.</p>
+<p>Adem&#xE1;s, existe una opci&#xF3;n adicional, <code>--all</code> o <code>-a</code>, que permite eliminar todos los recursos sin usar, incluyendo aquellos que est&#xE9;n en uso actualmente. Sin embargo, esta opci&#xF3;n debe utilizarse con precauci&#xF3;n, ya que puede resultar en la p&#xE9;rdida de datos si se eliminan contenedores, redes o vol&#xFA;menes que a&#xFA;n son necesarios.</p>
+<h2 class="mume-header" id="ejecutar-el-comando-docker-sin-sudo-opcional" ebook-toc-level-2 heading="Ejecutar el comando Docker sin sudo (opcional)">Ejecutar el comando Docker sin sudo (opcional)</h2>
+
+<p>Por defecto, el comando <code>docker</code> solo puede ser ejecutado por el usuario root o un usuario del grupo <code>docker</code>, que se crea autom&#xE1;ticamente durante el proceso de instalaci&#xF3;n de Docker. Si intenta ejecutar el comando <code>docker</code> sin <code>sudo</code> como prefijo o sin formar parte del grupo <code>docker</code>, obtendr&#xE1; un resultado como este:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>docker: Cannot connect to the Docker daemon. Is the docker daemon running on this host?.
+See &apos;docker run --help&apos;.
+</code></pre><p>Si desea evitar escribir <code>sudo</code> al ejecutar el comando <code>docker</code>, agregue su nombre de usuario al grupo <code>docker</code>:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>sudo usermod -aG docker ${USER}
+</code></pre><p>Para aplicar la nueva membres&#xED;a de grupo, cierre la sesi&#xF3;n del servidor y vuelva a iniciarla o escriba lo siguiente:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>su - ${USER}
+</code></pre><p>Para continuar, se le solicitar&#xE1; ingresar la contrase&#xF1;a de su usuario.</p>
+<p>Confirme que ahora su usuario se agreg&#xF3; al grupo <code>docker</code> escribiendo lo siguiente:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>id -nG
+</code></pre><p>Salida esperada:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>sammy sudo docker
+</code></pre><p>Si debe agregar al grupo <code>docker</code> un usuario con el que no inici&#xF3; sesi&#xF3;n, declare dicho nombre de usuario de forma expl&#xED;cita usando lo siguiente:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>sudo usermod -aG docker username
+</code></pre><p>Para el resto de este art&#xED;culo, se supone que ejecutar&#xE1; el comando <code>docker</code> como usuario del grupo <code>docker</code>. Si elige no hacerlo, incluya <code>sudo</code> al principio de los comandos.</p>
+<h2 class="mume-header" id="ejecuci%C3%B3n-de-un-contenedor-redis-con-docker" ebook-toc-level-2 heading="Ejecuci&amp;#xF3;n de un contenedor Redis con Docker">Ejecuci&#xF3;n de un contenedor Redis con Docker</h2>
+
+<p>El comando <code>docker run -d -p 6379:6379 --name redis_container redis</code> se utiliza para crear y ejecutar un contenedor de Docker a partir de la imagen &quot;redis&quot; disponible en Docker Hub. Aqu&#xED; tienes una explicaci&#xF3;n de cada parte del comando:</p>
+<ul>
+<li><code>docker run</code>: Inicia y ejecuta un nuevo contenedor.</li>
+<li><code>-d</code>: Ejecuta el contenedor en segundo plano (modo detached), lo que significa que el contenedor se ejecutar&#xE1; en segundo plano y no bloquear&#xE1; la terminal actual.</li>
+<li><code>-p 6379:6379</code>: Mapea el puerto 6379 del host al puerto 6379 del contenedor. Esto permite que los servicios o aplicaciones que se ejecuten en el host se comuniquen con el servicio Redis dentro del contenedor a trav&#xE9;s del puerto 6379.</li>
+<li><code>--name redis_container</code>: Asigna un nombre al contenedor creado. En este caso, el nombre asignado es &quot;redis_container&quot;. Esto facilita la referencia y gesti&#xF3;n del contenedor en lugar de utilizar su ID.</li>
+<li><code>redis</code>: Es el nombre de la imagen que se utilizar&#xE1; para crear el contenedor. En este caso, se utiliza la imagen oficial de Redis.</li>
+</ul>
+<p>Al ejecutar el comando <code>docker run -d -p 6379:6379 --name redis_container redis</code>, se crear&#xE1; un nuevo contenedor a partir de la imagen &quot;redis&quot;. El contenedor se ejecutar&#xE1; en segundo plano, expondr&#xE1; el puerto 6379 y se le asignar&#xE1; el nombre &quot;redis_container&quot;.</p>
+<p>Una vez que el contenedor est&#xE9; en ejecuci&#xF3;n, se podr&#xE1; interactuar con el servicio Redis dentro del contenedor a trav&#xE9;s del puerto 6379 en el host. Por ejemplo, se puede utilizar un cliente Redis para conectarse al contenedor y realizar operaciones de almacenamiento y recuperaci&#xF3;n de datos.</p>
+<p>Espero que esta explicaci&#xF3;n aclare el funcionamiento del comando <code>docker run -d -p 6379:6379 --name redis_container redis</code>. Si tienes m&#xE1;s preguntas, no dudes en hacerlas.</p>
+<h2 class="mume-header" id="ejecutar-comandos-en-un-contenedor" ebook-toc-level-2 heading="Ejecutar comandos en un contenedor">Ejecutar comandos en un contenedor</h2>
+
+<p>El comando <code>docker exec -it redis_container sh</code> se utiliza para ejecutar un comando dentro de un contenedor de Docker en ejecuci&#xF3;n.</p>
+<p>Aqu&#xED; est&#xE1; la explicaci&#xF3;n de cada parte del comando:</p>
+<ul>
+<li><code>docker exec</code>: Permite ejecutar un comando en un contenedor.</li>
+<li><code>-it</code>: Especifica que queremos interactuar con el contenedor en modo interactivo (Interactive TTY). Esto nos permite tener una sesi&#xF3;n interactiva dentro del contenedor y recibir la salida del comando en tiempo real.</li>
+<li><code>redis_container</code>: Es el nombre o el ID del contenedor en el cual deseamos ejecutar el comando.</li>
+<li><code>sh</code>: Es el comando que queremos ejecutar dentro del contenedor. En este caso, se utiliza &quot;sh&quot; para iniciar un int&#xE9;rprete de comandos dentro del contenedor, lo que nos permite ejecutar comandos dentro de ese entorno.</li>
+</ul>
+<p>Al ejecutar el comando <code>docker exec -it redis_container sh</code>, se iniciar&#xE1; una sesi&#xF3;n interactiva dentro del contenedor &quot;container&quot; y se abrir&#xE1; un int&#xE9;rprete de comandos en el entorno del contenedor. Esto te permitir&#xE1; ejecutar comandos como si estuvieras dentro de la m&#xE1;quina virtual o el sistema operativo en el que se ejecuta el contenedor.</p>
+<p>Es com&#xFA;n utilizar este tipo de comando para realizar tareas de administraci&#xF3;n, depuraci&#xF3;n o configuraci&#xF3;n dentro de un contenedor en ejecuci&#xF3;n. En el caso espec&#xED;fico del comando proporcionado, se asume que el contenedor &quot;container&quot; tiene instalado el int&#xE9;rprete de comandos &quot;sh&quot;, que es com&#xFA;nmente utilizado en sistemas Unix o Linux.</p>
+<h2 class="mume-header" id="redis-base-de-datos-en-memoria" ebook-toc-level-2 heading="Redis: Base de datos en memoria">Redis: Base de datos en memoria</h2>
+
+<p>El comando <code>redis_cli</code> se utiliza para iniciar el cliente de l&#xED;nea de comandos de Redis. Proporciona una interfaz interactiva que permite ejecutar comandos de Redis y comunicarse con una instancia de servidor Redis.</p>
+<p>El cliente de l&#xED;nea de comandos de Redis es &#xFA;til para realizar diversas operaciones, como almacenar y recuperar datos, ejecutar scripts, administrar claves y ejecutar comandos de control de Redis.</p>
+<p>Al ejecutar el comando <code>redis_cli</code>, se iniciar&#xE1; el cliente de l&#xED;nea de comandos de Redis y se establecer&#xE1; una conexi&#xF3;n con el servidor Redis. A partir de ese momento, se pueden ingresar comandos de Redis directamente en la terminal para interactuar con la base de datos de Redis.</p>
+<h2 class="mume-header" id="uso-de-comandos-b%C3%A1sicos-en-redis-ping-set-y-get" ebook-toc-level-2 heading="Uso de comandos b&amp;#xE1;sicos en Redis: ping, set y get">Uso de comandos b&#xE1;sicos en Redis: ping, set y get</h2>
+
+<ol>
+<li>
+<p><code>ping</code>: El comando <code>ping</code> se utiliza para comprobar si el servidor Redis est&#xE1; disponible y responde correctamente. Cuando se ejecuta el comando <code>ping</code>, si se obtiene una respuesta &quot;PONG&quot; del servidor Redis, significa que la conexi&#xF3;n con el servidor est&#xE1; establecida y funcionando correctamente.</p>
+<p>Ejemplo:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>&gt; ping
+PONG
+</code></pre></li>
+<li>
+<p><code>set</code>: El comando <code>set</code> se utiliza para almacenar un valor en Redis asociado a una clave. Permite establecer un par clave-valor en la base de datos de Redis.</p>
+<p>Ejemplo:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>&gt; set nombre Luis
+OK
+</code></pre><p>En este ejemplo, se est&#xE1; almacenando el valor &quot;Luis&quot; en Redis con la clave &quot;nombre&quot;. El comando retorna &quot;OK&quot; para indicar que la operaci&#xF3;n se realiz&#xF3; correctamente.</p>
+</li>
+<li>
+<p><code>get</code>: El comando <code>get</code> se utiliza para recuperar el valor asociado a una clave en Redis. Permite obtener el valor almacenado previamente en la base de datos de Redis.</p>
+<p>Ejemplo:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>&gt; get nombre
+&quot;Luis&quot;
+</code></pre><p>En este ejemplo, se est&#xE1; obteniendo el valor almacenado en Redis asociado a la clave &quot;nombre&quot;. El comando retorna el valor &quot;Luis&quot;, que fue previamente almacenado con el comando <code>set</code>.</p>
+</li>
+</ol>
 </div></body></html>
     </div>
   </body>
