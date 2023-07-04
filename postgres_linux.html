@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Apuntes</title>
+    <title>PostgreSQL Puertos Linux</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -17,74 +17,34 @@
   </head>
   <body for="html-export">
     <div class="mume markdown-preview">
-    <html><head></head><body><div><h1 class="mume-header" id="-apuntes-mysql">Apuntes</h1>
-      <ul>
-        <li><a href="./index.html">Inicio</a></li>
-        <li><a href="./ejercicios/ejercicios.html">BOOTCAMP FULLSTACK - SQL</a></li>
-        <li><a href="./actividades/ejercicios.html">BOOTCAMP FULLSTACK - JAVA</a></li>
-        
-        <li><a href="https://apuntes-java.netlify.app/">CURSO JAVA</a></li>
-        <li><a href="https://apuntes-spring.netlify.app/">CURSO SPRING</a></li>
-      </ul>
-      <hr>
-      <h2>Apuntes GIT</h2>
-      <ul>
-        <li><a href="./git_notes/index.html">Indice GIT</a></li>
-      </ul>
-      <hr>
-      <h2>Apuntes SQL</h2>
+    <html><head></head><body><div><h1 class="mume-header" id="postgres-sql">Postgres SQL</h1>
 
-      <h3>Instalacion Gestores BBDD</h3>
-      <ul>
-        <li><a href="./instalar_postgresql.html">PostgreSQL</a></li>
-        <li><a href="./mysqlUbuntu.html">MySQL</a></li>
-      </ul>
+<hr>
+<h2 class="mume-header" id="verificar-estado-de-postgres">Verificar estado de Postgres</h2>
 
-      <h3>Tomcat 9</h3>
-      <ul>
-        <li><a href="./instalarTomcatLinux.html">Instalar y Configurar Tomcat 9</a></li>
-      </ul>
+<pre class="language-text">sudo service postgresql status
+</pre>
+<h2 class="mume-header" id="desactivar-inicio-autom%C3%A1tico">Desactivar inicio autom&#xE1;tico</h2>
 
-      <h3>Docker</h3>
-      <ul>
-        <li><a href="./docker.html">Apuntes Docker</a></li>
-        <li><a href="./dockerMysql.html">Docker MySQL</a></li>
-        <li><a href="./dockerPostgres.html">Docker PostgreSQL</a></li>
-      </ul>
+<pre class="language-text">sudo systemctl disable postgresql
+</pre>
+<h2 class="mume-header" id="activar-incio-autom%C3%A1tico">Activar incio autom&#xE1;tico</h2>
 
-      <h3>Linux</h3>
-      <ul>
-        <li><a href="./puertosLinux.html">Puertos Linux</a></li>
-        <li><a href="./mysql_linux.html">Puerto MySQL Linux</a></li>
-        <li><a href="./postgres_linux.html">Puerto PostgreSQL Linux</a></li>
-      </ul>
+<pre class="language-text">sudo systemctl enable postgresql
+</pre>
+<h2 class="mume-header" id="inciar-servicio-postgres">Inciar servicio Postgres</h2>
 
-      <h3>Postman</h3>
-      <ul>
-        <li><a href="./postman.html">Postman</a></li>
-      </ul>
+<pre class="language-text">sudo systemctl start postgresql
+</pre>
+<h2 class="mume-header" id="detener-servicio-postgres">Detener servicio Postgres</h2>
 
-      <h3>Ejemplos</h3>
-      <ul>
-        <li><a href="./consultasSQL.html">Consultas SQL</a></li>
-        <ul>
-          <li><a href="./funcionesAgregadas.html">Funciones Agregadas</a></li>
-          <li><a href="./group_by.html">Group by</a></li>
-          <li><a href="./having.html">Having</a></li>
-          <li><a href="./order_by.html">Order by</a></li>
-          <li><a href="./modificarEliminar.html">Modificar - Eliminar</a></li>
-          <li><a href="./ejerciciosSQL.html">Actividades</a></li>
-        </ul>
-        <li><a href="./foreignKey.html">Foreign Keys</a></li>
-        <li><a href="./transaccionesSQL.html">Transacciones SQL</a></li>
-        <li><a href="./advanced_querys/avanzado.html">SQL Avanzado</a></li>
-      </ul>
-      
-    </div></body></html>
-    <hr>
-  </div>
-</body>
+<pre class="language-text">sudo systemctl stop postgresql
+</pre>
+<h2 class="mume-header" id="reiniciar-servicio-postgres">Reiniciar servicio Postgres</h2>
+
+<pre class="language-text">sudo service postgresql restart
+</pre>
+</div></body></html>
+    </div>
+  </body>
 </html>
-
-
-  
